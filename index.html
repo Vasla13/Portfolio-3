@@ -97,7 +97,6 @@
                     >
                   </div>
                 </div>
-
                 <div class="col-right">
                   <div id="vault-boy-art"></div>
                   <h3 class="section-title">DONNÉES BIOMÉTRIQUES</h3>
@@ -106,19 +105,14 @@
                     technologie et style rétro. Mon objectif est d'apprendre,
                     d'innover et de sécuriser les infrastructures de demain.
                   </p>
-
-                  <h3 class="section-title" style="margin-top: 20px">
-                    PERKS (SOFT SKILLS)
-                  </h3>
+                  <h3 class="section-title" style="margin-top: 20px">PERKS</h3>
                   <div class="perks-grid">
                     <div class="perk-badge">CURIOSITÉ</div>
                     <div class="perk-badge">AUTONOMIE</div>
                     <div class="perk-badge">TRAVAIL D'ÉQUIPE</div>
-                    <div class="perk-badge">RÉSOLUTION PROBLÈMES</div>
                   </div>
-
                   <h3 class="section-title" style="margin-top: 20px">
-                    S.P.E.C.I.A.L. (STACK)
+                    S.P.E.C.I.A.L.
                   </h3>
                   <div class="skill-row">
                     <span>PYTHON / BASH</span>
@@ -166,13 +160,9 @@
                     <span class="inv-qty">PERSO</span> Challenge HTB
                     <span class="inv-val">CYBER</span>
                   </div>
-                  <div class="inv-item" data-project-id="ProjetPerso2">
-                    <span class="inv-qty">ETUDE</span> Projet Docker
-                    <span class="inv-val">DEVOPS</span>
-                  </div>
                 </div>
                 <div class="item-details-box">
-                  <p id="project-desc">SÉLECTIONNEZ UNE DATA POUR ANALYSE...</p>
+                  <p id="project-desc">SÉLECTIONNEZ UNE DATA...</p>
                   <div id="project-link-container"></div>
                 </div>
               </div>
@@ -188,68 +178,39 @@
             </section>
 
             <section id="tab-data" class="tab-content">
-              <h3 class="section-title">LOGS PROFESSIONNELS</h3>
-              <div class="logs-container">
-                <details class="log-entry">
-                  <summary>
-                    <span class="log-date">2024-2025</span> ALTERNANCE EN
-                    CYBERSÉCURITÉ
-                  </summary>
-                  <div class="log-content">
-                    <p>> Rôle: Administrateur Réseaux Junior / Cybersécurité</p>
-                    <p>
-                      > Missions: Maintien en condition opérationnelle (MCO),
-                      Configuration VLANs, Support N2.
-                    </p>
-                    <p>
-                      > Technologies: Cisco, VMWare, Windows Server, Linux
-                      (Debian/Ubuntu).
-                    </p>
+              <h3 class="section-title">TERMINAL DE COMMUNICATION (I.A.)</h3>
+              <div id="chatbot-terminal">
+                <div id="chat-history"></div>
+                <div id="chat-interface">
+                  <div id="chat-suggestions"></div>
+                  <div class="input-area">
+                    <span class="prompt-char">></span>
+                    <input
+                      type="text"
+                      id="user-input"
+                      placeholder="Poser une question..."
+                      autocomplete="off"
+                    />
+                    <button id="send-btn">ENVOYER</button>
                   </div>
-                </details>
-
-                <details class="log-entry">
-                  <summary>
-                    <span class="log-date">AVRIL 2024</span> STAGE BUT2 -
-                    SUPERVISION
-                  </summary>
-                  <div class="log-content">
-                    <p>> Rôle: Technicien Intégration / Supervision</p>
-                    <p>
-                      > Missions: Déploiement et configuration de Zabbix et
-                      Grafana pour la surveillance d'infrastructures.
-                    </p>
-                    <p>
-                      > Technologies: Linux, Python (scripts d'automatisation),
-                      SNMP, Docker.
-                    </p>
-                  </div>
-                </details>
+                </div>
               </div>
-
-              <h3 class="section-title" style="margin-top: 30px">
-                HOLOTAPES (CONTACT)
-              </h3>
-              <div class="contact-grid">
-                <a href="mailto:ton.email@uha.fr" class="holotape-btn">
-                  <span class="holo-icon">✉</span> EMAIL
-                </a>
-
+              <div class="contact-mini-bar">
+                <a href="mailto:ton.email@uha.fr" class="mini-link"
+                  >[ ✉️ MAIL ]</a
+                >
                 <a
                   href="https://www.linkedin.com/in/%C3%A9ric-petersen-51a138277/"
                   target="_blank"
-                  class="holotape-btn"
+                  class="mini-link"
+                  >[ in LINKEDIN ]</a
                 >
-                  <span class="holo-icon">in</span> LINKEDIN
-                </a>
-
                 <a
                   href="https://github.com/Vasla13"
                   target="_blank"
-                  class="holotape-btn"
+                  class="mini-link"
+                  >[ Git GITHUB ]</a
                 >
-                  <span class="holo-icon">Git</span> GITHUB
-                </a>
               </div>
             </section>
           </div>
@@ -269,6 +230,9 @@
       integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
       crossorigin=""
     ></script>
+
+    <script src="js/brain.js"></script>
+    <script src="js/chatbot.js"></script>
     <script src="js/app.js"></script>
   </body>
 </html>

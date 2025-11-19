@@ -1,19 +1,20 @@
+/*
+   APP.JS - Logique principale du site
+   Gère le Boot, les Onglets, la Map et les Projets.
+*/
+
 document.addEventListener("DOMContentLoaded", () => {
-  // --- 1. LOGIQUE DE DÉMARRAGE (SKIP INTRO) ---
+  // --- 1. SKIP INTRO (SessionStorage) ---
   const bootScreen = document.getElementById("boot-screen");
   const bootText = document.getElementById("boot-text");
 
-  // Vérification : Est-ce que l'utilisateur est déjà venu dans cette session ?
   if (sessionStorage.getItem("pipboy_booted")) {
-    // OUI -> On supprime l'écran de boot immédiatement
     if (bootScreen) {
       bootScreen.style.display = "none";
       bootScreen.remove();
     }
-    // On lance directement les animations qui se lancent normalement après l'intro
     setTimeout(animateBars, 100);
   } else {
-    // NON -> On lance la séquence cinématique
     const bootLines = [
       "INITIALIZING PIP-OS v7.1.0.8...",
       "CHECKING MEMORY... 64KB OK",
@@ -21,11 +22,8 @@ document.addEventListener("DOMContentLoaded", () => {
       "CONNECTING TO UHA NETWORK...",
       "USER AUTHENTICATED: ERIC PETERSEN",
     ];
-
     let lineIndex = 0;
     let charIndex = 0;
-
-    // On note que l'intro a été vue pour la prochaine fois (F5)
     sessionStorage.setItem("pipboy_booted", "true");
 
     function typeWriter() {
@@ -42,7 +40,6 @@ document.addEventListener("DOMContentLoaded", () => {
           setTimeout(typeWriter, 150);
         }
       } else {
-        // Fin de l'intro
         setTimeout(() => {
           bootScreen.style.opacity = "0";
           setTimeout(() => {
@@ -55,7 +52,7 @@ document.addEventListener("DOMContentLoaded", () => {
     typeWriter();
   }
 
-  // --- 2. NAVIGATION ONGLETS ---
+  // --- 2. NAVIGATION ---
   const tabs = document.querySelectorAll(".tab-btn");
   const pages = document.querySelectorAll(".tab-content");
 
@@ -75,15 +72,21 @@ document.addEventListener("DOMContentLoaded", () => {
           if (map) map.invalidateSize();
         }, 100);
       }
+
+      // Appel du Chatbot via la fonction globale
+      if (targetId === "tab-data") {
+        if (typeof window.initChatbot === "function") {
+          window.initChatbot();
+        }
+      }
     });
   });
 
   function animateBars() {
-    // Petit délai pour assurer que le DOM est prêt
     setTimeout(() => {
       const fills = document.querySelectorAll(".fill");
       fills.forEach((fill) => {
-        fill.style.width = "0%"; // Reset pour rejouer l'anim
+        fill.style.width = "0%";
         setTimeout(() => {
           const targetWidth = fill.getAttribute("style").match(/--w:(\d+%)/)[1];
           fill.style.width = targetWidth;
@@ -107,11 +110,9 @@ document.addEventListener("DOMContentLoaded", () => {
       touchZoom: false,
       dragging: false,
     }).setView(iutCoords, 16);
-
     L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
       maxZoom: 19,
     }).addTo(map);
-
     const pipIcon = L.divIcon({
       className: "custom-pip-marker",
       html: '<div style="background-color:#1eff00; width:14px; height:14px; border-radius:50%; box-shadow:0 0 10px #1eff00; border: 2px solid #000;"></div>',
@@ -125,7 +126,7 @@ document.addEventListener("DOMContentLoaded", () => {
     mapInitialized = true;
   }
 
-  // --- 4. GESTION PROJETS (Items) ---
+  // --- 4. PROJETS ---
   const invItems = document.querySelectorAll(".inv-item");
   invItems.forEach((item) => {
     item.addEventListener("click", function () {
@@ -164,11 +165,6 @@ document.addEventListener("DOMContentLoaded", () => {
         link: "#",
         txt: "LIEN",
       },
-      ProjetPerso2: {
-        desc: "> PROJET: Mise en place d'un environnement de développement avec Docker.\n> COMPÉTENCES: Conteneurisation, CI/CD de base, Administration Docker.\n> LIEN: Dépôt GitHub (privé).",
-        link: "#",
-        txt: "LIEN",
-      },
     };
 
     const item = data[projectID];
@@ -181,7 +177,6 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
 
-  // --- 5. TRANSITION CINÉMATIQUE ---
   function launchRetroTransition() {
     document.body.classList.add("shutting-down");
     setTimeout(() => {
