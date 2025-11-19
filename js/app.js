@@ -1,40 +1,59 @@
 document.addEventListener("DOMContentLoaded", () => {
-  // --- 1. BOOT SEQUENCE ---
+  // --- 1. LOGIQUE DE DÉMARRAGE (SKIP INTRO) ---
   const bootScreen = document.getElementById("boot-screen");
   const bootText = document.getElementById("boot-text");
-  const bootLines = [
-    "INITIALIZING PIP-OS v7.1.0.8...",
-    "CHECKING MEMORY... 64KB OK",
-    "LOADING PERSONAL DATA...",
-    "CONNECTING TO UHA NETWORK...",
-    "USER AUTHENTICATED: ERIC PETERSEN",
-  ];
 
-  let lineIndex = 0;
-  let charIndex = 0;
-
-  function typeWriter() {
-    if (lineIndex < bootLines.length) {
-      const line = bootLines[lineIndex];
-      if (charIndex < line.length) {
-        bootText.innerHTML += line.charAt(charIndex);
-        charIndex++;
-        setTimeout(typeWriter, 20);
-      } else {
-        bootText.innerHTML += "<br>";
-        lineIndex++;
-        charIndex = 0;
-        setTimeout(typeWriter, 150);
-      }
-    } else {
-      setTimeout(() => {
-        bootScreen.style.opacity = "0";
-        setTimeout(() => bootScreen.remove(), 500);
-        animateBars();
-      }, 800);
+  // Vérification : Est-ce que l'utilisateur est déjà venu dans cette session ?
+  if (sessionStorage.getItem("pipboy_booted")) {
+    // OUI -> On supprime l'écran de boot immédiatement
+    if (bootScreen) {
+      bootScreen.style.display = "none";
+      bootScreen.remove();
     }
+    // On lance directement les animations qui se lancent normalement après l'intro
+    setTimeout(animateBars, 100);
+  } else {
+    // NON -> On lance la séquence cinématique
+    const bootLines = [
+      "INITIALIZING PIP-OS v7.1.0.8...",
+      "CHECKING MEMORY... 64KB OK",
+      "LOADING PERSONAL DATA...",
+      "CONNECTING TO UHA NETWORK...",
+      "USER AUTHENTICATED: ERIC PETERSEN",
+    ];
+
+    let lineIndex = 0;
+    let charIndex = 0;
+
+    // On note que l'intro a été vue pour la prochaine fois (F5)
+    sessionStorage.setItem("pipboy_booted", "true");
+
+    function typeWriter() {
+      if (lineIndex < bootLines.length) {
+        const line = bootLines[lineIndex];
+        if (charIndex < line.length) {
+          bootText.innerHTML += line.charAt(charIndex);
+          charIndex++;
+          setTimeout(typeWriter, 20);
+        } else {
+          bootText.innerHTML += "<br>";
+          lineIndex++;
+          charIndex = 0;
+          setTimeout(typeWriter, 150);
+        }
+      } else {
+        // Fin de l'intro
+        setTimeout(() => {
+          bootScreen.style.opacity = "0";
+          setTimeout(() => {
+            bootScreen.remove();
+            animateBars();
+          }, 500);
+        }, 800);
+      }
+    }
+    typeWriter();
   }
-  typeWriter();
 
   // --- 2. NAVIGATION ONGLETS ---
   const tabs = document.querySelectorAll(".tab-btn");
@@ -60,14 +79,17 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   function animateBars() {
-    const fills = document.querySelectorAll(".fill");
-    fills.forEach((fill) => {
-      fill.style.width = "0%";
-      setTimeout(() => {
-        const targetWidth = fill.getAttribute("style").match(/--w:(\d+%)/)[1];
-        fill.style.width = targetWidth;
-      }, 100);
-    });
+    // Petit délai pour assurer que le DOM est prêt
+    setTimeout(() => {
+      const fills = document.querySelectorAll(".fill");
+      fills.forEach((fill) => {
+        fill.style.width = "0%"; // Reset pour rejouer l'anim
+        setTimeout(() => {
+          const targetWidth = fill.getAttribute("style").match(/--w:(\d+%)/)[1];
+          fill.style.width = targetWidth;
+        }, 100);
+      });
+    }, 100);
   }
 
   // --- 3. MAP ---
@@ -151,7 +173,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const item = data[projectID];
     if (item) {
-      // Remplacer les '\n' par des <br> pour un affichage HTML multi-lignes
       descBox.innerHTML = item.desc.replace(/\n/g, "<br>");
       linkBox.innerHTML = `<a href="${item.link}" target="_blank" style="color:var(--pip-green); display:block; margin-top:10px;">[ ${item.txt} ]</a>`;
     } else {
