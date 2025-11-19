@@ -1,0 +1,94 @@
+/* Animations */
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes blink {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+}
+@keyframes flicker {
+  0% {
+    opacity: 0.95;
+  }
+  50% {
+    opacity: 0.85;
+  }
+  100% {
+    opacity: 0.95;
+  }
+}
+
+.blink-slow {
+  animation: blink 2s infinite;
+}
+.blink {
+  animation: blink 1s infinite;
+}
+
+/* Onglets */
+.tab-content {
+  display: none;
+  height: 100%;
+  animation: slideUp 0.3s ease-out;
+}
+.tab-content.active {
+  display: block;
+}
+.tab-btn {
+  padding: 5px 20px;
+  cursor: pointer;
+  border: 1px solid transparent;
+  text-transform: uppercase;
+  font-size: 1.2rem;
+}
+.tab-btn:hover,
+.tab-btn.active {
+  background: var(--pip-green);
+  color: #000;
+  font-weight: bold;
+  box-shadow: 0 0 10px var(--pip-green);
+}
+
+/* Titres */
+.section-title {
+  border-bottom: 1px dashed var(--pip-dim);
+  padding-bottom: 5px;
+  margin-bottom: 15px;
+  font-size: 1.1rem; /* Uniformisation de la taille du titre */
+  color: var(--pip-green);
+  letter-spacing: 1px;
+}
+
+/* Boutons CV */
+.cv-container {
+  margin-top: 15px;
+  display: flex;
+  gap: 10px;
+}
+.cv-btn {
+  flex: 1;
+  text-align: center;
+  border: 1px solid var(--pip-green);
+  padding: 10px;
+  font-weight: bold;
+  background: rgba(30, 255, 0, 0.05);
+  color: var(--pip-green);
+  text-decoration: none;
+  transition: 0.2s;
+}
+.cv-btn:hover {
+  background: var(--pip-green);
+  color: #000;
+}
