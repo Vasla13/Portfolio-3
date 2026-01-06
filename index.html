@@ -1,274 +1,292 @@
 <!DOCTYPE html>
 <html lang="fr">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Eric Petersen | Portfolio BUT3</title>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Portfolio d'Eric Petersen - Étudiant BUT3 R&T Spécialisation Cybersécurité. Projets IoT, DevSecOps et Administration Système.">
+    <title>Eric Petersen | Architecte Cyber & Réseaux</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
 
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323&display=swap"
-      rel="stylesheet"
-    />
-
-    <link rel="stylesheet" href="css/variables.css" />
-    <link rel="stylesheet" href="css/base.css" />
-    <link rel="stylesheet" href="css/layout.css" />
-    <link rel="stylesheet" href="css/components.css" />
-    <link rel="stylesheet" href="css/pages.css" />
-    <link rel="stylesheet" href="css/transition.css" />
-
-    <link
-      rel="stylesheet"
-      href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
-      integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
-      crossorigin=""
-    />
-  </head>
-  <body>
-    <div id="transition-overlay">
-      <div class="synthwave-sun"></div>
-      <div class="synthwave-grid"></div>
-      <div class="retro-text">
-        INITIALISATION...<br />
-        <span
-          class="blink-fast"
-          style="color: #00f3ff; margin-top: 15px; display: block"
-          >LOADING E-PORTFOLIO V2</span
-        >
-      </div>
+    <div class="bg-animation">
+        <div class="blob blob-1"></div>
+        <div class="blob blob-2"></div>
     </div>
 
-    <div id="boot-screen">
-      <div class="boot-terminal">
-        <p id="boot-text"></p>
-        <div class="cursor"></div>
-      </div>
-    </div>
-
-    <main class="pipboy-casing">
-      <div class="screw tl"></div>
-      <div class="screw tr"></div>
-      <div class="screw bl"></div>
-      <div class="screw br"></div>
-      <div class="knob-wheel"></div>
-      <div class="button-top"></div>
-
-      <div class="screen-container">
-        <div class="screen-layer crt-overlay"></div>
-        <div class="screen-layer vignette"></div>
-
-        <div class="ui-content">
-          <header class="ui-header">
-            <div class="header-left">
-              <span class="blink-slow">■</span> BUT3
-            </div>
-            <div class="header-center">R&T : CYBER & RÉSEAUX</div>
-            <div class="header-right">
-              ANNÉE <span class="highlight">3</span>
-            </div>
-          </header>
-
-          <div id="content-area">
-            <section id="tab-stat" class="tab-content active">
-              <div class="columns-2">
-                <div class="col-left align-center">
-                  <div class="vault-boy-frame">
-                    <img
-                      src="assets/profil.jpg"
-                      alt="Eric Petersen"
-                      id="profile-picture"
-                    />
-                  </div>
-                  <div class="bio-box">
-                    <p>> ERIC PETERSEN</p>
-                    <p>> ÉTUDIANT CYBER</p>
-                    <p class="blink" style="margin-top: 5px; color: #fff">
-                      [ STATUS: ONLINE ]
-                    </p>
-                  </div>
-                  <div class="cv-container">
-                    <a href="assets/cv_fr.pdf" target="_blank" class="cv-btn"
-                      >CV FR [PDF]</a
-                    >
-                    <a href="assets/cv_en.pdf" target="_blank" class="cv-btn"
-                      >CV EN [PDF]</a
-                    >
-                  </div>
-                </div>
-
-                <div class="col-right">
-                  <div id="vault-boy-art"></div>
-                  <h3 class="section-title">DONNÉES BIOMÉTRIQUES</h3>
-                  <p class="bio-text">
-                    Passionné de cybersécurité et développement, je fusionne
-                    technologie et style rétro. Mon objectif est d'apprendre,
-                    d'innover et de sécuriser les infrastructures de demain.
-                  </p>
-
-                  <h3 class="section-title" style="margin-top: 20px">
-                    PERKS (SOFT SKILLS)
-                  </h3>
-                  <div class="perks-grid">
-                    <div class="perk-badge">CURIOSITÉ</div>
-                    <div class="perk-badge">AUTONOMIE</div>
-                    <div class="perk-badge">TRAVAIL D'ÉQUIPE</div>
-                    <div class="perk-badge">RÉSOLUTION PROBLÈMES</div>
-                  </div>
-
-                  <h3 class="section-title" style="margin-top: 20px">
-                    S.P.E.C.I.A.L. (STACK)
-                  </h3>
-                  <div class="skill-row">
-                    <span>PYTHON / BASH</span>
-                    <div class="pip-prog">
-                      <div class="fill" style="--w: 90%"></div>
-                    </div>
-                  </div>
-                  <div class="skill-row">
-                    <span>RÉSEAU / CISCO</span>
-                    <div class="pip-prog">
-                      <div class="fill" style="--w: 85%"></div>
-                    </div>
-                  </div>
-                  <div class="skill-row">
-                    <span>WEB (JS/PHP)</span>
-                    <div class="pip-prog">
-                      <div class="fill" style="--w: 75%"></div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </section>
-
-            <section id="tab-inv" class="tab-content">
-              <h3 class="section-title">INVENTAIRE DES QUÊTES</h3>
-              <div class="inventory-container">
-                <div class="inv-list">
-                  <div class="inv-item" data-project-id="SAE-501">
-                    <span class="inv-qty">SAE</span> Pilotage Projet
-                    <span class="inv-val">BUT3</span>
-                  </div>
-                  <div class="inv-item" data-project-id="SAE-502">
-                    <span class="inv-qty">SAE</span> Sécurisation Infra
-                    <span class="inv-val">BUT3</span>
-                  </div>
-                  <div class="inv-item" data-project-id="Homelab">
-                    <span class="inv-qty">PERSO</span> HomeLab Virtu
-                    <span class="inv-val">R&T</span>
-                  </div>
-                  <div class="inv-item special-item" data-project-id="BUT2">
-                    <span class="inv-qty">ARCH</span> Portfolio BUT2
-                    <span class="inv-val">>>></span>
-                  </div>
-                  <div class="inv-item" data-project-id="ProjetPerso1">
-                    <span class="inv-qty">PERSO</span> Challenge HTB
-                    <span class="inv-val">CYBER</span>
-                  </div>
-                  <div class="inv-item" data-project-id="ProjetPerso2">
-                    <span class="inv-qty">ETUDE</span> Projet Docker
-                    <span class="inv-val">DEVOPS</span>
-                  </div>
-                </div>
-                <div class="item-details-box">
-                  <p id="project-desc">SÉLECTIONNEZ UNE DATA POUR ANALYSE...</p>
-                  <div id="project-link-container"></div>
-                </div>
-              </div>
-            </section>
-
-            <section id="tab-map" class="tab-content">
-              <h3 class="section-title">SYSTEME DE NAVIGATION</h3>
-              <div class="map-wrapper"><div id="iut-map"></div></div>
-              <div class="map-info">
-                <p>POSITION: <span class="blink">IUT COLMAR</span></p>
-                <small>COORDS: 48°04'37.4"N 7°22'14.9"E</small>
-              </div>
-            </section>
-
-            <section id="tab-data" class="tab-content">
-              <h3 class="section-title">LOGS PROFESSIONNELS</h3>
-              <div class="logs-container">
-                <details class="log-entry">
-                  <summary>
-                    <span class="log-date">2024-2025</span> ALTERNANCE EN
-                    CYBERSÉCURITÉ
-                  </summary>
-                  <div class="log-content">
-                    <p>> Rôle: Administrateur Réseaux Junior / Cybersécurité</p>
-                    <p>
-                      > Missions: Maintien en condition opérationnelle (MCO),
-                      Configuration VLANs, Support N2.
-                    </p>
-                    <p>
-                      > Technologies: Cisco, VMWare, Windows Server, Linux
-                      (Debian/Ubuntu).
-                    </p>
-                  </div>
-                </details>
-
-                <details class="log-entry">
-                  <summary>
-                    <span class="log-date">AVRIL 2024</span> STAGE BUT2 -
-                    SUPERVISION
-                  </summary>
-                  <div class="log-content">
-                    <p>> Rôle: Technicien Intégration / Supervision</p>
-                    <p>
-                      > Missions: Déploiement et configuration de Zabbix et
-                      Grafana pour la surveillance d'infrastructures.
-                    </p>
-                    <p>
-                      > Technologies: Linux, Python (scripts d'automatisation),
-                      SNMP, Docker.
-                    </p>
-                  </div>
-                </details>
-              </div>
-
-              <h3 class="section-title" style="margin-top: 30px">
-                HOLOTAPES (CONTACT)
-              </h3>
-              <div class="contact-grid">
-                <a href="mailto:ton.email@uha.fr" class="holotape-btn">
-                  <span class="holo-icon">✉</span> EMAIL
-                </a>
-
-                <a
-                  href="https://www.linkedin.com/in/%C3%A9ric-petersen-51a138277/"
-                  target="_blank"
-                  class="holotape-btn"
-                >
-                  <span class="holo-icon">in</span> LINKEDIN
-                </a>
-
-                <a
-                  href="https://github.com/Vasla13"
-                  target="_blank"
-                  class="holotape-btn"
-                >
-                  <span class="holo-icon">Git</span> GITHUB
-                </a>
-              </div>
-            </section>
-          </div>
-
-          <footer class="ui-footer">
-            <div class="tab-btn active" data-target="tab-stat">STATUS</div>
-            <div class="tab-btn" data-target="tab-inv">ITEMS</div>
-            <div class="tab-btn" data-target="tab-map">MAP</div>
-            <div class="tab-btn" data-target="tab-data">DATA</div>
-          </footer>
+    <nav class="navbar glass-effect">
+        <a href="#" class="logo">&lt;EP /&gt;</a>
+        <ul class="nav-links">
+            <li><a href="#home" class="active">Accueil</a></li>
+            <li><a href="#skills">Compétences</a></li>
+            <li><a href="#experience">Parcours</a></li>
+            <li><a href="#projects">Projets</a></li>
+            <li><a href="#contact" class="btn-contact">Me Contacter</a></li>
+        </ul>
+        <div class="burger" aria-label="Menu">
+            <div class="line1"></div>
+            <div class="line2"></div>
+            <div class="line3"></div>
         </div>
-      </div>
-    </main>
+    </nav>
 
-    <script
-      src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
-      integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
-      crossorigin=""
-    ></script>
-    <script src="js/app.js"></script>
-  </body>
+    <section id="home" class="hero">
+        <div class="hero-container container">
+            <div class="hero-text">
+                <div class="badge-container fade-in-up">
+                    <span class="badge">Étudiant BUT3 R&T</span>
+                    <span class="badge badge-outline">Spécialisation Cyber</span>
+                </div>
+                <h1 class="fade-in-up delay-1">Eric <span class="text-gradient">Petersen</span></h1>
+                <h2 class="mono fade-in-up delay-2">Architecte Réseaux & Cybersécurité</h2>
+                <p class="fade-in-up delay-3">
+                    Passionné par la sécurisation des infrastructures critiques et le développement d'outils réseaux (DevSecOps). 
+                    Actuellement à la recherche d'opportunités en ingénierie sécurité.
+                </p>
+                <div class="cta-group fade-in-up delay-4">
+                    <a href="#projects" class="btn btn-primary">Voir mes projets <i class="fa-solid fa-arrow-right"></i></a>
+                    <a href="assets/CV_Eric_Petersen.pdf" target="_blank" class="btn btn-secondary">
+                        <i class="fa-solid fa-download"></i> CV FR
+                    </a>
+                    <a href="assets/CV_Eric_Petersen_EN.pdf" target="_blank" class="btn btn-ghost" title="CV English">EN</a>
+                </div>
+                
+                <div class="social-bar fade-in-up delay-5">
+                    <a href="https://github.com/Vasla13" target="_blank"><i class="fa-brands fa-github"></i></a>
+                    <a href="https://www.linkedin.com/in/%C3%A9ric-petersen-51a138277/" target="_blank"><i class="fa-brands fa-linkedin-in"></i></a>
+                    <a href="mailto:eripet05@gmail.com"><i class="fa-solid fa-envelope"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="scroll-down">
+            <span>Scroll</span>
+            <i class="fa-solid fa-chevron-down"></i>
+        </div>
+    </section>
+
+    <section id="skills" class="section">
+        <div class="container">
+            <h2 class="section-title"><span class="accent">#</span> Compétences Techniques</h2>
+            <p class="section-subtitle">Performances académiques (BUT3 - Semestre 5)</p>
+            
+            <div class="skills-wrapper">
+                <div class="skills-grid">
+                    <div class="skill-card glass-effect reveal">
+                        <div class="skill-header">
+                            <i class="fa-solid fa-code skill-icon"></i>
+                            <div class="skill-info">
+                                <h3>Dév / Programmation</h3>
+                                <span class="skill-grade">Note UE: 19.14/20</span>
+                            </div>
+                        </div>
+                        <div class="progress-container">
+                            <div class="progress-bar" data-width="95%"></div>
+                        </div>
+                        <p class="skill-tags mono">Python, Bash, JS, LAMP</p>
+                    </div>
+
+                    <div class="skill-card glass-effect reveal">
+                        <div class="skill-header">
+                            <i class="fa-solid fa-network-wired skill-icon"></i>
+                            <div class="skill-info">
+                                <h3>Administration Réseaux</h3>
+                                <span class="skill-grade">Note UE: 17.04/20</span>
+                            </div>
+                        </div>
+                        <div class="progress-container">
+                            <div class="progress-bar" data-width="85%"></div>
+                        </div>
+                        <p class="skill-tags mono">Cisco, VLAN, Routing, TCP/IP</p>
+                    </div>
+
+                    <div class="skill-card glass-effect reveal">
+                        <div class="skill-header">
+                            <i class="fa-solid fa-shield-halved skill-icon"></i>
+                            <div class="skill-info">
+                                <h3>Cybersécurité</h3>
+                                <span class="skill-grade">Note UE: 15.00/20</span>
+                            </div>
+                        </div>
+                        <div class="progress-container">
+                            <div class="progress-bar" data-width="75%"></div>
+                        </div>
+                        <p class="skill-tags mono">Pentesting, SecOps, Audits</p>
+                    </div>
+
+                    <div class="skill-card glass-effect reveal">
+                        <div class="skill-header">
+                            <i class="fa-solid fa-tower-broadcast skill-icon"></i>
+                            <div class="skill-info">
+                                <h3>Télécoms / Connecter</h3>
+                                <span class="skill-grade">Note UE: 15.28/20</span>
+                            </div>
+                        </div>
+                        <div class="progress-container">
+                            <div class="progress-bar" data-width="75%"></div>
+                        </div>
+                        <p class="skill-tags mono">LoRaWAN, 4G/5G, Fibres</p>
+                    </div>
+                </div>
+
+                <div class="skill-focus glass-effect reveal">
+                    <div class="focus-header">
+                        <h4><i class="fa-solid fa-chart-line"></i> Axe d'amélioration : Supervision</h4>
+                    </div>
+                    <div class="focus-content">
+                        <div class="progress-container warning">
+                            <div class="progress-bar warning-bar" data-width="40%"></div>
+                        </div>
+                        <p>Note UE: 8.00/20 — Compétence en cours d'acquisition active via Homelab (Nagios/Zabbix).</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="experience" class="section alt-bg">
+        <div class="container">
+            <h2 class="section-title"><span class="accent">#</span> Expérience Pro</h2>
+            
+            <div class="timeline">
+                <div class="timeline-item reveal">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-date mono">2025 (8 sem.)</div>
+                    <div class="timeline-content glass-effect">
+                        <div class="job-header">
+                            <h3>Développeur Web Sécurisé & SysAdmin</h3>
+                            <span class="company">DORNER Health IT <img src="https://flagcdn.com/de.svg" alt="DE" width="20"></span>
+                        </div>
+                        <p class="job-desc">
+                            Développement de <strong>"imed-WebUpdate"</strong>, une solution d'automatisation des mises à jour logicielles critiques.
+                        </p>
+                        <ul class="job-tasks">
+                            <li><i class="fa-solid fa-check"></i> Conception App Web Sécurisée (Stack LAMP + SQLite).</li>
+                            <li><i class="fa-solid fa-check"></i> Scripting Bash avancé pour l'automatisation système.</li>
+                            <li><i class="fa-solid fa-check"></i> Implémentation sécurité : Protection CSRF, validation stricte, logs d'audit.</li>
+                        </ul>
+                        <div class="tags">
+                            <span>PHP 7.4</span><span>Bash</span><span>Linux Debian</span><span>SecOps</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="timeline-item reveal">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-date mono">2023 (5 sem.)</div>
+                    <div class="timeline-content glass-effect">
+                        <div class="job-header">
+                            <h3>Technicien Support & Infra</h3>
+                            <span class="company">ELANCO</span>
+                        </div>
+                        <p class="job-desc">Intervention en Data Center et maintenance du parc informatique.</p>
+                        <ul class="job-tasks">
+                            <li><i class="fa-solid fa-check"></i> Configuration caméras IP (VLANs, Routage).</li>
+                            <li><i class="fa-solid fa-check"></i> Support utilisateur N2 & Maintenance Hardware.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="timeline-item reveal">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-date mono">2022</div>
+                    <div class="timeline-content glass-effect">
+                        <div class="job-header">
+                            <h3>Stage Dév Web</h3>
+                            <span class="company">DORNER GmbH</span>
+                        </div>
+                        <p class="job-desc">Initiation au développement professionnel (HTML/CSS/JS).</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects" class="section">
+        <div class="container">
+            <h2 class="section-title"><span class="accent">#</span> Projets Phares</h2>
+            
+            <div class="projects-grid">
+                <article class="project-card glass-effect reveal">
+                    <div class="card-image project-iot">
+                        <div class="card-overlay">
+                            <span class="project-grade">Note: 20/20</span>
+                        </div>
+                    </div>
+                    <div class="card-content">
+                        <h3>SAE 5.01 IoT LoRaWAN</h3>
+                        <p>Architecture IoT complète et sécurisée. De la collecte capteur à la visualisation des données.</p>
+                        <ul class="tech-list mono">
+                            <li>LoRaWAN</li>
+                            <li>Python</li>
+                            <li>MQTT</li>
+                            <li>Grafana</li>
+                        </ul>
+                        <div class="card-links">
+                            <a href="#" class="btn-sm">Détails <i class="fa-solid fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="project-card glass-effect reveal">
+                    <div class="card-image project-web">
+                        <div class="card-overlay">
+                            <span class="project-tag">Projet Stage</span>
+                        </div>
+                    </div>
+                    <div class="card-content">
+                        <h3>imed-WebUpdate (DevSecOps)</h3>
+                        <p>Outil d'automatisation de déploiement. Interface web pilotant des scripts système Linux sécurisés.</p>
+                        <ul class="tech-list mono">
+                            <li>LAMP</li>
+                            <li>Bash</li>
+                            <li>CSRF Prot.</li>
+                        </ul>
+                        <div class="card-links">
+                            <a href="#" class="btn-sm">Détails <i class="fa-solid fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="project-card glass-effect reveal">
+                    <div class="card-image project-lab"></div>
+                    <div class="card-content">
+                        <h3>Homelab & CTF</h3>
+                        <p>Laboratoire de virtualisation (Proxmox/AD) et entrainement régulier au pentesting (HackTheBox).</p>
+                        <ul class="tech-list mono">
+                            <li>Proxmox</li>
+                            <li>Kali Linux</li>
+                            <li>Active Directory</li>
+                        </ul>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <footer id="contact" class="glass-effect">
+        <div class="container footer-container">
+            <div class="footer-left">
+                <h3>Eric Petersen</h3>
+                <p class="mono">eripet05@gmail.com</p>
+                <p class="location"><i class="fa-solid fa-location-dot"></i> Ottmarsheim, France</p>
+            </div>
+            <div class="footer-right">
+                <div class="social-links-footer">
+                    <a href="https://github.com/Vasla13" target="_blank">GitHub</a>
+                    <a href="https://www.linkedin.com/in/%C3%A9ric-petersen-51a138277/" target="_blank">LinkedIn</a>
+                </div>
+                <p class="copyright">&copy; 2026 Eric Petersen. Designed & Coded.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
 </html>
