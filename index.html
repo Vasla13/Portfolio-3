@@ -3,15 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Portfolio Eric Petersen - Architecte Réseaux & Cybersécurité. Expert en IoT, DevSecOps et Infrastructure.">
     <title>Eric Petersen | Architecte Cyber</title>
-    
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <meta name="description" content="Portfolio Eric Petersen - BUT R&T Cybersécurité. Expert en architectures sécurisées et automatisation.">
+
+    <meta property="og:title" content="Eric Petersen | Portfolio Cyber">
+    <meta property="og:image" content="assets/profil.jpg">
+
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
-    
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
@@ -23,108 +22,104 @@
     </div>
 
     <nav class="navbar glass">
-        <a href="#" class="logo-brand">
-            ERIC<span class="dot">.</span>P
-        </a>
+        <a href="#" class="logo-brand">ERIC<span class="dot">.</span>P</a>
 
         <ul class="nav-links">
             <li><a href="#home" class="nav-item">Accueil</a></li>
-            <li><a href="#skills" class="nav-item">Expertise</a></li>
+            <li><a href="#skills" class="nav-item">Compétences (UE)</a></li>
             <li><a href="#experience" class="nav-item">Parcours</a></li>
             <li><a href="#projects" class="nav-item">Projets</a></li>
-            <li><a href="#contact" class="btn-neon">Me Contacter</a></li>
+            <li><a href="https://vasla13.github.io/portfolio-2/" target="_blank" class="nav-item portfolio-link"><i class="fa-solid fa-folder-open"></i> Portfolio BUT2</a></li>
+            <li><a href="https://e-portfolio.uha.fr/view/view.php?t=30cd063b10ee63ee04aa" target="_blank" class="nav-item portfolio-link"><i class="fa-solid fa-folder-open"></i> Portfolio BUT1</a></li>
+            <li><a href="#contact" class="btn-neon">Contact</a></li>
         </ul>
 
-        <div class="burger">
-            <span></span>
-            <span></span>
-            <span></span>
-        </div>
+        <div class="burger"><span></span><span></span><span></span></div>
     </nav>
 
     <header id="home" class="hero">
         <div class="container hero-content">
-            <div class="hero-badge fade-up">
+            <div class="profile-frame fade-up">
+                <img src="assets/profil.jpg" alt="Eric Petersen" class="profile-img">
+            </div>
+
+            <div class="hero-badge fade-up delay-1">
                 <span class="status-dot"></span> Open to work : Septembre 2026
             </div>
             
-            <h1 class="fade-up delay-1">Eric <span class="gradient-text">Petersen</span></h1>
-            <h2 class="fade-up delay-2">Architecte Réseaux & <span class="txt-type mono" data-wait="2000" data-words='["Cybersécurité", "DevSecOps", "Cloud"]'></span></h2>
+            <h1 class="fade-up delay-2">Eric <span class="gradient-text">Petersen</span></h1>
+            <h2 class="fade-up delay-3">BUT R&T Parcours <span class="txt-type mono" data-wait="2000" data-words='["Cybersécurité", "Cloud", "DevSecOps"]'></span></h2>
             
-            <p class="fade-up delay-3">
-                Étudiant en BUT3 R&T. Je conçois des architectures sécurisées et développe des outils d'automatisation résilients pour les infrastructures critiques.
+            <p class="fade-up delay-4">
+                Futur architecte réseaux. Je conçois, sécurise et supervise les infrastructures critiques.
             </p>
             
             <div class="hero-buttons fade-up delay-4">
-                <a href="#projects" class="btn btn-primary">Explorer mes travaux <i class="fa-solid fa-arrow-right"></i></a>
-                <a href="https://github.com/Vasla13" target="_blank" class="btn btn-outline"><i class="fa-brands fa-github"></i> GitHub</a>
+                <a href="#projects" class="btn btn-primary">Voir mes projets <i class="fa-solid fa-arrow-right"></i></a>
+                <a href="assets/cv_fr.pdf" download class="btn btn-outline"><i class="fa-solid fa-download"></i> CV PDF</a>
             </div>
         </div>
-        
-        <div class="scroll-indicator">
-            <div class="mouse"></div>
-        </div>
+        <div class="scroll-indicator"><div class="mouse"></div></div>
     </header>
 
     <section id="skills" class="section">
         <div class="container">
             <div class="section-header">
-                <span class="section-tag">Performance Académique & Technique</span>
-                <h2 class="section-title">Mes Compétences</h2>
+                <span class="section-tag">Référentiel BUT R&T Cyber</span>
+                <h2 class="section-title">Mes 5 Compétences Clés</h2>
                 <div class="title-underline"></div>
+                <p style="margin-top: 15px; color: var(--text-gray);">Cliquez sur une compétence pour voir le détail du référentiel.</p>
             </div>
 
             <div class="skills-wrapper">
-                <div class="skill-card glass reveal">
-                    <div class="skill-top">
-                        <div class="icon-box"><i class="fa-solid fa-code"></i></div>
-                        <span class="grade">19.14/20</span>
-                    </div>
-                    <h3>Dév & Programmation</h3>
-                    <div class="progress-bg"><div class="progress-fill" style="--w:95%"></div></div>
-                    <ul class="tags-list mono">
-                        <li>Python</li>
-                        <li>Fullstack JS</li>
-                        <li>Bash</li>
-                    </ul>
-                </div>
-
-                <div class="skill-card glass reveal delay-1">
+                <div class="skill-card glass reveal" onclick="openModal('modal-ue1')">
                     <div class="skill-top">
                         <div class="icon-box"><i class="fa-solid fa-network-wired"></i></div>
-                        <span class="grade">17.04/20</span>
+                        <span class="ue-badge">UE 1</span>
                     </div>
-                    <h3>Admin Réseaux</h3>
-                    <div class="progress-bg"><div class="progress-fill" style="--w:85%"></div></div>
-                    <ul class="tags-list mono">
-                        <li>Cisco</li>
-                        <li>VLAN/Routing</li>
-                        <li>TCP/IP</li>
-                    </ul>
+                    <h3>Administrer les réseaux & Internet</h3>
+                    <p class="skill-summary">Architecture, Routage, Systèmes.</p>
+                    <div class="click-hint"><i class="fa-solid fa-plus"></i> Voir détail</div>
                 </div>
 
-                <div class="skill-card glass reveal delay-2">
+                <div class="skill-card glass reveal delay-1" onclick="openModal('modal-ue2')">
+                    <div class="skill-top">
+                        <div class="icon-box"><i class="fa-solid fa-tower-cell"></i></div>
+                        <span class="ue-badge">UE 2</span>
+                    </div>
+                    <h3>Connecter Entreprises & Usagers</h3>
+                    <p class="skill-summary">Technologies d'accès, Fibre, WiFi, ToIP.</p>
+                    <div class="click-hint"><i class="fa-solid fa-plus"></i> Voir détail</div>
+                </div>
+
+                <div class="skill-card glass reveal delay-2" onclick="openModal('modal-ue3')">
+                    <div class="skill-top">
+                        <div class="icon-box"><i class="fa-solid fa-code"></i></div>
+                        <span class="ue-badge">UE 3</span>
+                    </div>
+                    <h3>Créer des outils & applications</h3>
+                    <p class="skill-summary">Automatisation, Scripting, DevOps.</p>
+                    <div class="click-hint"><i class="fa-solid fa-plus"></i> Voir détail</div>
+                </div>
+
+                <div class="skill-card glass reveal delay-3" onclick="openModal('modal-ue4')">
                     <div class="skill-top">
                         <div class="icon-box"><i class="fa-solid fa-shield-halved"></i></div>
-                        <span class="grade">15.00/20</span>
+                        <span class="ue-badge">UE 4</span>
                     </div>
-                    <h3>Cybersécurité</h3>
-                    <div class="progress-bg"><div class="progress-fill" style="--w:75%"></div></div>
-                    <ul class="tags-list mono">
-                        <li>Audits</li>
-                        <li>Pentesting</li>
-                        <li>SecOps</li>
-                    </ul>
+                    <h3>Administrer un SI Sécurisé</h3>
+                    <p class="skill-summary">Hardening, Crypto, Pentesting.</p>
+                    <div class="click-hint"><i class="fa-solid fa-plus"></i> Voir détail</div>
                 </div>
 
-                <div class="skill-card glass warning-card reveal delay-3">
+                <div class="skill-card glass reveal delay-4" onclick="openModal('modal-ue5')">
                     <div class="skill-top">
-                        <div class="icon-box warn"><i class="fa-solid fa-chart-line"></i></div>
-                        <span class="grade text-warn">8.00/20</span>
+                        <div class="icon-box active-learn"><i class="fa-solid fa-eye"></i></div>
+                        <span class="ue-badge warn">UE 5</span>
                     </div>
-                    <h3>Supervision</h3>
-                    <div class="progress-bg"><div class="progress-fill fill-warn" style="--w:40%"></div></div>
-                    <p class="card-note">Objectif de progression actuel via Homelab (Zabbix/Nagios).</p>
+                    <h3>Surveiller un SI Sécurisé</h3>
+                    <p class="skill-summary">SOC, SIEM, Gestion d'incidents.</p>
+                    <div class="click-hint"><i class="fa-solid fa-plus"></i> Voir détail</div>
                 </div>
             </div>
         </div>
@@ -133,8 +128,8 @@
     <section id="experience" class="section alt-bg">
         <div class="container">
             <div class="section-header">
-                <span class="section-tag">Carrière & Stages</span>
-                <h2 class="section-title">Mon Parcours</h2>
+                <span class="section-tag">Expérience Professionnelle</span>
+                <h2 class="section-title">Mon Parcours Récent</h2>
                 <div class="title-underline"></div>
             </div>
     
@@ -147,51 +142,34 @@
                         <div class="dot-pulse"></div>
                     </div>
                     <div class="timeline-content glass-card">
-                        <span class="date-badge mono"><i class="fa-regular fa-clock"></i> 2025</span>
+                        <span class="date-badge mono">Septembre 2026</span>
                         <div class="job-header">
-                            <h3>Développeur Web Sécurisé</h3>
-                            <span class="company"><i class="fa-solid fa-building"></i> DORNER Health IT <img src="https://flagcdn.com/w20/de.png" alt="DE" class="flag"></span>
+                            <h3>Architecte Réseaux & Cyber</h3>
+                            <span class="company">Objectif Professionnel</span>
                         </div>
-                        <p class="job-desc">Conception de <strong>"imed-WebUpdate"</strong>, un système critique de déploiement sécurisé.</p>
-                        <div class="tech-tags mono">
-                            <span>Linux</span><span>LAMP</span><span>Bash</span><span>SecOps</span>
-                        </div>
+                        <p class="job-desc">
+                            Recherche d'un poste en CDI ou poursuite d'études en alternance.
+                            Expertise visée : Architecture Cloud Sécurisée & DevSecOps.
+                        </p>
                     </div>
                 </div>
     
                 <div class="timeline-row right reveal delay-1">
                     <div class="timeline-dot">
                         <div class="dot-core"></div>
-                        <div class="dot-pulse"></div>
                     </div>
                     <div class="timeline-content glass-card">
-                        <span class="date-badge mono"><i class="fa-regular fa-clock"></i> 2023</span>
+                        <span class="date-badge mono">2025 • Stage (8 sem)</span>
                         <div class="job-header">
-                            <h3>Technicien Infra & Support</h3>
-                            <span class="company"><i class="fa-solid fa-building"></i> ELANCO France</span>
+                            <h3>Développeur Web Sécurisé</h3>
+                            <span class="company">DORNER Health IT <img src="https://flagcdn.com/w20/de.png" alt="DE" class="flag"></span>
                         </div>
-                        <p class="job-desc">Maintenance opérationnelle (MCO) d'un parc industriel et gestion des incidents N2.</p>
-                        <div class="tech-tags mono">
-                            <span>VLAN</span><span>Hardware</span><span>Troubleshooting</span>
-                        </div>
-                    </div>
-                </div>
-    
-                <div class="timeline-row left reveal delay-2">
-                    <div class="timeline-dot">
-                        <div class="dot-core"></div>
-                        <div class="dot-pulse"></div>
-                    </div>
-                    <div class="timeline-content glass-card">
-                        <span class="date-badge mono"><i class="fa-regular fa-clock"></i> 2022</span>
-                        <div class="job-header">
-                            <h3>Stage Dév Web</h3>
-                            <span class="company"><i class="fa-solid fa-building"></i> DORNER GmbH <img src="https://flagcdn.com/w20/de.png" alt="DE" class="flag"></span>
-                        </div>
-                        <p class="job-desc">Première immersion professionnelle. Développement de modules web frontend.</p>
-                        <div class="tech-tags mono">
-                            <span>HTML5</span><span>CSS3</span><span>JS</span>
-                        </div>
+                        <p class="job-desc">
+                            <strong>Projet imed-WebUpdate :</strong> Développement d'une solution critique de déploiement logiciel sécurisé.
+                            <br>• Stack : Linux, Apache, MySQL, PHP (LAMP).
+                            <br>• Sécurité : Gestion des droits, logs, chiffrement.
+                        </p>
+                        <div class="tech-tags mono"><span>SecOps</span><span>Bash</span><span>Fullstack</span></div>
                     </div>
                 </div>
             </div>
@@ -201,71 +179,220 @@
     <section id="projects" class="section">
         <div class="container">
             <div class="section-header">
-                <span class="section-tag">Réalisations Techniques</span>
+                <span class="section-tag">Portfolio Technique</span>
                 <h2 class="section-title">Projets Phares</h2>
                 <div class="title-underline"></div>
             </div>
 
             <div class="projects-grid">
-                <article class="project-card glass reveal">
+                <article class="project-card glass reveal" onclick="openModal('modal-p1')">
                     <div class="card-image iot-bg">
-                        <span class="badge-score">Note : 20/20</span>
+                        <span class="badge-type">SAE 5.01</span>
                     </div>
                     <div class="card-body">
-                        <h3 class="mono">IoT LoRaWAN Secure</h3>
-                        <p>Architecture complète : Capteurs -> LoRa -> Serveur -> Dashboard. Chiffrement de bout en bout.</p>
-                        <div class="tech-stack">
-                            <span>Python</span><span>MQTT</span><span>Grafana</span>
-                        </div>
+                        <h3 class="mono">IoT LoRaWAN Sécurisé</h3>
+                        <p>Architecture complète de collecte de données chiffrées.</p>
+                        <div class="tech-stack"><span>Python</span><span>MQTT/TLS</span></div>
                     </div>
                 </article>
 
-                <article class="project-card glass reveal delay-1">
+                <article class="project-card glass reveal delay-1" onclick="openModal('modal-p2')">
                     <div class="card-image homelab-bg">
-                        <span class="badge-type">Perso</span>
+                        <span class="badge-type">SAE 5.Cyber.03</span>
                     </div>
                     <div class="card-body">
-                        <h3 class="mono">Homelab Virtualisation</h3>
-                        <p>Cluster Proxmox pour simulations d'attaques (Red Team) et défense (Blue Team).</p>
-                        <div class="tech-stack">
-                            <span>Proxmox</span><span>AD</span><span>Pfsense</span>
-                        </div>
+                        <h3 class="mono">Homelab Proxmox</h3>
+                        <p>Cluster de virtualisation pour simulations d'attaques.</p>
+                        <div class="tech-stack"><span>Proxmox</span><span>AD</span><span>Pfsense</span></div>
                     </div>
                 </article>
 
-                <article class="project-card glass reveal delay-2">
+                <article class="project-card glass reveal delay-2" onclick="openModal('modal-p3')">
                     <div class="card-image ctf-bg">
                         <span class="badge-type">Training</span>
                     </div>
                     <div class="card-body">
-                        <h3 class="mono">CTF & Pentesting</h3>
-                        <p>Résolution active de challenges sur HackTheBox et Root-Me pour affûter mes compétences offensives.</p>
-                        <div class="tech-stack">
-                            <span>Kali</span><span>BurpSuite</span><span>Nmap</span>
-                        </div>
+                        <h3 class="mono">Pentesting & CTF</h3>
+                        <p>Entraînement offensif sur Root-Me et HackTheBox.</p>
+                        <div class="tech-stack"><span>Kali</span><span>Burp</span><span>Nmap</span></div>
                     </div>
                 </article>
             </div>
         </div>
     </section>
 
-    <footer id="contact" class="glass-footer">
-        <div class="container footer-content">
-            <div class="contact-box">
-                <h3>Prêt à collaborer ?</h3>
-                <p>Je suis à la recherche de nouvelles opportunités pour 2026.</p>
-                <a href="mailto:eripet05@gmail.com" class="email-link">eripet05@gmail.com</a>
+    <footer id="contact" class="minimal-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <h3>ERIC<span class="dot">.</span>P</h3>
+                    <p>Étudiant Cyber & Réseaux.</p>
+                </div>
                 
-                <div class="socials">
-                    <a href="https://www.linkedin.com/in/%C3%A9ric-petersen-51a138277/" target="_blank" title="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
-                    <a href="https://github.com/Vasla13" target="_blank" title="GitHub"><i class="fa-brands fa-github"></i></a>
+                <div class="footer-contact">
+                    <a href="mailto:eripet05@gmail.com" class="footer-link">eripet05@gmail.com</a>
+                    <div class="footer-socials">
+                        <a href="https://www.linkedin.com/in/%C3%A9ric-petersen-51a138277/" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
+                        <a href="https://github.com/Vasla13" target="_blank"><i class="fa-brands fa-github"></i></a>
+                    </div>
                 </div>
             </div>
-            <div class="copyright mono">
-                <p>&copy; 2026 Eric Petersen. All Rights Reserved.</p>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Eric Petersen.</p>
             </div>
         </div>
     </footer>
+
+    <dialog id="modal-ue1" class="modal glass">
+        <div class="modal-content">
+            <button class="close-btn" onclick="closeModal('modal-ue1')">&times;</button>
+            <h2>UE 1 : Administrer les réseaux et l’Internet</h2>
+            <div class="modal-body">
+                <h3>Compétences Essentielles (CE1)</h3>
+                <ul>
+                    <li>Choisir les solutions et technologies réseaux adaptées.</li>
+                    <li>Respecter les principes fondamentaux de la sécurité informatique.</li>
+                    <li>Résoudre les dysfonctionnements (Troubleshooting).</li>
+                </ul>
+                <h3>Apprentissages Critiques (AC)</h3>
+                <ul class="mono-list">
+                    <li>AC11.03 | Configurer les fonctions de base du réseau local.</li>
+                    <li>AC11.04 | Maîtriser les rôles et principes des OS (Linux/Windows).</li>
+                    <li>AC21.01 | Configurer et dépanner le routage dynamique.</li>
+                </ul>
+            </div>
+        </div>
+    </dialog>
+
+    <dialog id="modal-ue2" class="modal glass">
+        <div class="modal-content">
+            <button class="close-btn" onclick="closeModal('modal-ue2')">&times;</button>
+            <h2>UE 2 : Connecter les entreprises et les usagers</h2>
+            <div class="modal-body">
+                <h3>Compétences Essentielles (CE2)</h3>
+                <ul>
+                    <li>Déploiement des supports et systèmes de transmission (Fibre/Cuivre).</li>
+                    <li>Administration des accès fixes et mobiles (4G/5G).</li>
+                    <li>Mise en œuvre des services de ToIP/VoIP.</li>
+                </ul>
+                <h3>Apprentissages Critiques (AC)</h3>
+                <ul class="mono-list">
+                    <li>AC12.02 | Mesurer et analyser les signaux.</li>
+                    <li>AC22.02 | Connecter les systèmes de ToIP.</li>
+                    <li>AC32.01 | Administrer les infrastructures opérateurs.</li>
+                </ul>
+            </div>
+        </div>
+    </dialog>
+
+    <dialog id="modal-ue3" class="modal glass">
+        <div class="modal-content">
+            <button class="close-btn" onclick="closeModal('modal-ue3')">&times;</button>
+            <h2>UE 3 : Créer des outils & applications</h2>
+            <div class="modal-body">
+                <h3>Compétences Essentielles (CE3)</h3>
+                <ul>
+                    <li>Automatisation des tâches d'administration (Scripting).</li>
+                    <li>Développement d'outils internes et APIs.</li>
+                    <li>Intégration des problématiques de sécurité dans le code (DevSecOps).</li>
+                </ul>
+                <h3>Apprentissages Critiques (AC)</h3>
+                <ul class="mono-list">
+                    <li>AC13.01 | Automatiser l’administration système avec des scripts.</li>
+                    <li>AC23.01 | Utiliser un protocole réseau pour programmer une application.</li>
+                    <li>AC33.02 | Automatiser le déploiement (CI/CD).</li>
+                </ul>
+            </div>
+        </div>
+    </dialog>
+
+    <dialog id="modal-ue4" class="modal glass">
+        <div class="modal-content">
+            <button class="close-btn" onclick="closeModal('modal-ue4')">&times;</button>
+            <h2>UE 4 : Administrer un SI Sécurisé</h2>
+            <div class="modal-body">
+                <h3>Compétences Essentielles (CE4)</h3>
+                <ul>
+                    <li>Mise en œuvre d'une politique de sécurité (PSSI).</li>
+                    <li>Durcissement des systèmes (Hardening).</li>
+                    <li>Utilisation de la cryptographie (PKI, VPN, TLS).</li>
+                </ul>
+                <h3>Apprentissages Critiques (AC)</h3>
+                <ul class="mono-list">
+                    <li>AC24.01 | Mettre en œuvre les outils fondamentaux de sécurisation.</li>
+                    <li>AC34.02 | Déployer des outils avancés (FW Next-Gen, IDS/IPS).</li>
+                    <li>AC34.03 | Sécuriser les OS et services.</li>
+                </ul>
+            </div>
+        </div>
+    </dialog>
+
+    <dialog id="modal-ue5" class="modal glass">
+        <div class="modal-content">
+            <button class="close-btn" onclick="closeModal('modal-ue5')">&times;</button>
+            <h2>UE 5 : Surveiller un SI Sécurisé</h2>
+            <div class="modal-body">
+                <h3>Compétences Essentielles (CE5)</h3>
+                <ul>
+                    <li>Assurer une veille permanente (Threat Intelligence).</li>
+                    <li>Surveiller le comportement du réseau (Analyse de trafic).</li>
+                    <li>Gestion des incidents de sécurité (SOC).</li>
+                </ul>
+                <h3>Apprentissages Critiques (AC)</h3>
+                <ul class="mono-list">
+                    <li>AC35.01 | Surveiller l’activité du système d’information (SIEM).</li>
+                    <li>AC35.02 | Appliquer une méthodologie de tests de pénétration.</li>
+                    <li>AC25.01 | Administrer les protections contre les malwares.</li>
+                </ul>
+            </div>
+        </div>
+    </dialog>
+
+    <dialog id="modal-p1" class="modal glass">
+        <div class="modal-content">
+            <button class="close-btn" onclick="closeModal('modal-p1')">&times;</button>
+            <h2>Projet IoT LoRaWAN</h2>
+            <div class="modal-body">
+                <p>Mise en place d'une chaine de collecte sécurisée.</p>
+                <ul>
+                    <li>Capteurs : Configuration des devices LoRa.</li>
+                    <li>Transport : Gateway LoRaWAN vers Network Server.</li>
+                    <li>Application : Décodage Payload et envoi MQTT sécurisé (TLS).</li>
+                    <li>Viz : Dashboard Grafana pour le monitoring temps réel.</li>
+                </ul>
+            </div>
+        </div>
+    </dialog>
+    
+    <dialog id="modal-p2" class="modal glass">
+        <div class="modal-content">
+            <button class="close-btn" onclick="closeModal('modal-p2')">&times;</button>
+            <h2>Homelab Proxmox</h2>
+            <div class="modal-body">
+                <p>Environnement de virtualisation pour l'expérimentation.</p>
+                <ul>
+                    <li>Infrastructure : Cluster Proxmox VE.</li>
+                    <li>Réseau : Segmentation VLAN, Firewall Pfsense.</li>
+                    <li>Services : Active Directory, DNS, DHCP.</li>
+                </ul>
+            </div>
+        </div>
+    </dialog>
+
+    <dialog id="modal-p3" class="modal glass">
+        <div class="modal-content">
+            <button class="close-btn" onclick="closeModal('modal-p3')">&times;</button>
+            <h2>Pentesting & CTF</h2>
+            <div class="modal-body">
+                <p>Développement des compétences offensives (Red Team).</p>
+                <ul>
+                    <li>Plateformes : Root-Me, HackTheBox.</li>
+                    <li>Outils : Suite Kali Linux (Nmap, Metasploit, Burp Suite).</li>
+                    <li>Objectifs : Comprendre les attaques pour mieux défendre.</li>
+                </ul>
+            </div>
+        </div>
+    </dialog>
 
     <script src="js/script.js"></script>
 </body>
