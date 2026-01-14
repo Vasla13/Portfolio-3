@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UE 3 | Programmer</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        /* Styles identiques */
+        .section-tag { color: var(--cyan); font-weight: 700; letter-spacing: 2px; text-transform: uppercase; font-size: 0.8rem; }
+        .intro-card { text-align: center; max-width: 800px; margin: 0 auto 50px; padding: 40px; border-top: 1px solid var(--cyan); }
+        .sub-title { text-align: center; margin-bottom: 30px; font-size: 1.8rem; color: var(--text-white); }
+        .resources-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 25px; margin-bottom: 60px; }
+        .res-card { padding: 30px; border-top: 3px solid transparent; transition: 0.3s; }
+        .res-card:hover { transform: translateY(-5px); border-top-color: var(--cyan); }
+        .res-card.active { border-color: var(--cyan); background: rgba(0, 240, 255, 0.02); }
+        .res-header { font-family: var(--font-mono); font-weight: 700; color: var(--cyan); margin-bottom: 20px; text-transform: uppercase; border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 10px; }
+        .mono-list { list-style: none; padding: 0; }
+        .mono-list li { margin-bottom: 10px; font-size: 0.95rem; color: #cbd5e1; display: flex; gap: 10px; }
+        .mono-list li span { color: var(--violet); font-weight: 700; min-width: 60px; }
+        .validated-badge { margin-top: 20px; display: inline-block; padding: 5px 12px; border-radius: 50px; background: rgba(0, 240, 255, 0.1); color: var(--cyan); font-size: 0.8rem; font-weight: 700; }
+        .split-section { display: grid; grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); gap: 30px; margin-bottom: 50px; }
+        .content-box { padding: 35px; }
+        .content-box h2 { color: var(--violet); margin-bottom: 20px; font-size: 1.4rem; }
+        .check-list li { margin-bottom: 12px; padding-left: 20px; position: relative; }
+        .check-list li::before { content: '✓'; position: absolute; left: 0; color: var(--cyan); font-weight: bold; }
+        .check-list li.highlight { color: var(--cyan); font-weight: 600; }
+        .reflection-card { padding: 40px; border-left: 4px solid var(--cyan); margin-bottom: 50px; }
+        .reflection-card h2 { color: var(--text-white); margin-bottom: 20px; }
+        .reflection-content p { margin-bottom: 15px; line-height: 1.7; color: #b0b8c4; }
+        .footer-ue { text-align: center; padding: 30px; background: rgba(0,0,0,0.3); border-color: var(--glass-border); color: var(--cyan); font-weight: 600; }
+    </style>
+</head>
+<body>
+    <div class="bg-wrapper">
+        <div class="blob blob-1"></div>
+        <div class="blob blob-2"></div>
+        <div class="grid-pattern"></div>
+    </div>
+
+    <nav class="navbar glass">
+        <a href="index.html" class="logo-brand">ERIC<span class="dot">.</span>P</a>
+        <a href="index.html#skills" class="btn-neon"><i class="fa-solid fa-arrow-left"></i> Retour</a>
+    </nav>
+
+    <section class="section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Compétence 3</span>
+                <h1 class="section-title">Créer des outils & applications</h1>
+                <div class="title-underline"></div>
+            </div>
+
+            <div class="glass intro-card reveal">
+                <h2><i class="fa-solid fa-quote-left"></i> Préambule</h2>
+                <p>
+                    Cette page justifie l'acquisition de l'UE 3. J'y démontre mes compétences en développement, 
+                    automatisation et gestion de projet, essentielles pour mon profil orienté DevSecOps.
+                </p>
+            </div>
+
+            <h2 class="sub-title"><i class="fa-solid fa-book"></i> Ressources Validées</h2>
+            <div class="resources-grid">
+                <div class="glass res-card reveal delay-1">
+                    <div class="res-header">Semestres 1 & 2</div>
+                    <ul class="mono-list">
+                        <li><span>R1.07</span> Fondamentaux Prog</li>
+                        <li><span>R1.09</span> Dev Web (HTML/CSS)</li>
+                        <li><span>R2.08</span> Prog Objet (Python)</li>
+                        <li><span>R2.09</span> Dev Web Dynamique (PHP)</li>
+                        <li><span>R2.13</span> Maths du numérique</li>
+                    </ul>
+                </div>
+                
+                <div class="glass res-card reveal delay-2">
+                    <div class="res-header">Semestres 3 & 4</div>
+                    <ul class="mono-list">
+                        <li><span>R3.07</span> Prog Système</li>
+                        <li><span>R3.08</span> Bases de Données (SQL)</li>
+                        <li><span>R3.09</span> Dev Web Avancé</li>
+                        <li><span>R4.06</span> Scripting & Automatisation</li>
+                    </ul>
+                </div>
+
+                <div class="glass res-card active reveal delay-3">
+                    <div class="res-header">Semestre 5 (Expert)</div>
+                    <ul class="mono-list">
+                        <li><span>R5.02</span> Supervision (Scripting)</li>
+                        <li><span>R5.08</span> Gestion de Projet</li>
+                        <li><span>R5.05</span> Communication Pro</li>
+                    </ul>
+                    <div class="validated-badge"><i class="fa-solid fa-check"></i> En cours d'acquisition</div>
+                </div>
+            </div>
+
+            <div class="split-section">
+                <div class="glass content-box reveal">
+                    <h2><i class="fa-solid fa-briefcase"></i> SAE Réalisées</h2>
+                    <ul class="check-list">
+                        <li><strong>SAE 1.05</strong> : Traitement de données</li>
+                        <li><strong>SAE 2.03</strong> : Application Web dynamique</li>
+                        <li><strong>SAE 3.02</strong> : App Communicantes</li>
+                        <li class="highlight"><strong>SAE 5.01</strong> : CyberFi (Scripting Python/MQTT)</li>
+                    </ul>
+                </div>
+
+                <div class="glass content-box reveal delay-1">
+                    <h2><i class="fa-solid fa-bullseye"></i> Objectifs Programme National</h2>
+                    <p>
+                        Le professionnel doit savoir automatiser l'administration système et créer des outils sur mesure. 
+                        Il maîtrise les langages de script (Python, Bash), le développement Web et les pratiques DevOps (Git, CI/CD).
+                    </p>
+                </div>
+            </div>
+
+            <div class="glass reflection-card reveal delay-2">
+                <h2><i class="fa-solid fa-brain"></i> Réflexion sur les AC (DevSecOps)</h2>
+                <div class="reflection-content">
+                    <p>
+                        Lors de mon stage chez <strong>Dorner Health IT</strong>, j'ai développé une solution critique (LAMP) 
+                        et automatisé son déploiement via Bash. Cela valide ma capacité à produire du code fiable et sécurisé.
+                    </p>
+                    <p>
+                        Sur la <strong>SAE 5.01</strong>, l'utilisation de Python pour traiter les données IoT et les injecter 
+                        dans une BDD montre ma polyvalence entre le réseau et le code.
+                    </p>
+                </div>
+            </div>
+
+            <div class="glass footer-ue reveal delay-3">
+                <p>Je valide l'UE 3 par ma capacité à créer des outils logiciels adaptés aux besoins réseaux.</p>
+            </div>
+        </div>
+    </section>
+    <script src="js/script.js"></script>
+</body>
+</html>

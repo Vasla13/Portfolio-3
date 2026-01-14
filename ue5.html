@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UE 5 | Surveiller</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        /* THEME ROUGE */
+        :root { --theme-color: #ef4444; }
+        .section-tag { color: var(--theme-color); font-weight: 700; letter-spacing: 2px; text-transform: uppercase; font-size: 0.8rem; }
+        .intro-card { text-align: center; max-width: 800px; margin: 0 auto 50px; padding: 40px; border-top: 1px solid var(--theme-color); }
+        .sub-title { text-align: center; margin-bottom: 30px; font-size: 1.8rem; color: var(--text-white); }
+        .resources-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 25px; margin-bottom: 60px; }
+        .res-card { padding: 30px; border-top: 3px solid transparent; transition: 0.3s; }
+        .res-card:hover { transform: translateY(-5px); border-top-color: var(--theme-color); }
+        .res-card.active { border-color: var(--theme-color); background: rgba(239, 68, 68, 0.05); }
+        .res-header { font-family: var(--font-mono); font-weight: 700; color: var(--theme-color); margin-bottom: 20px; text-transform: uppercase; border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 10px; }
+        .mono-list { list-style: none; padding: 0; }
+        .mono-list li { margin-bottom: 10px; font-size: 0.95rem; color: #cbd5e1; display: flex; gap: 10px; }
+        .mono-list li span { color: var(--theme-color); font-weight: 700; min-width: 60px; }
+        .validated-badge { margin-top: 20px; display: inline-block; padding: 5px 12px; border-radius: 50px; background: rgba(239, 68, 68, 0.2); color: var(--theme-color); font-size: 0.8rem; font-weight: 700; }
+        .split-section { display: grid; grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); gap: 30px; margin-bottom: 50px; }
+        .content-box { padding: 35px; }
+        .content-box h2 { color: var(--theme-color); margin-bottom: 20px; font-size: 1.4rem; }
+        .check-list li { margin-bottom: 12px; padding-left: 20px; position: relative; }
+        .check-list li::before { content: '✓'; position: absolute; left: 0; color: var(--theme-color); font-weight: bold; }
+        .check-list li.highlight { color: var(--theme-color); font-weight: 600; }
+        .reflection-card { padding: 40px; border-left: 4px solid var(--theme-color); margin-bottom: 50px; }
+        .reflection-card h2 { color: var(--text-white); margin-bottom: 20px; }
+        .reflection-content p { margin-bottom: 15px; line-height: 1.7; color: #b0b8c4; }
+        .footer-ue { text-align: center; padding: 30px; background: rgba(0,0,0,0.3); border-color: var(--theme-color); color: var(--theme-color); font-weight: 600; }
+    </style>
+</head>
+<body>
+    <div class="bg-wrapper">
+        <div class="blob blob-1" style="background: #ef4444;"></div>
+        <div class="blob blob-2"></div>
+        <div class="grid-pattern"></div>
+    </div>
+
+    <nav class="navbar glass">
+        <a href="index.html" class="logo-brand">ERIC<span class="dot">.</span>P</a>
+        <a href="index.html#skills" class="btn-neon"><i class="fa-solid fa-arrow-left"></i> Retour</a>
+    </nav>
+
+    <section class="section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Parcours Cyber</span>
+                <h1 class="section-title">Surveiller un SI Sécurisé</h1>
+                <div class="title-underline" style="background: #ef4444;"></div>
+            </div>
+
+            <div class="glass intro-card reveal">
+                <h2><i class="fa-solid fa-quote-left"></i> Préambule</h2>
+                <p>
+                    Cette page justifie l'UE 5. Elle couvre mes compétences en supervision de sécurité (SOC), 
+                    en détection d'incidents et en tests d'intrusion (Pentesting).
+                </p>
+            </div>
+
+            <h2 class="sub-title"><i class="fa-solid fa-book"></i> Ressources Validées</h2>
+            <div class="resources-grid">
+                <div class="glass res-card reveal delay-1">
+                    <div class="res-header">Semestres 1 à 4</div>
+                    <ul class="mono-list">
+                        <li><span>R2.06</span> Supervision Réseaux</li>
+                        <li><span>R3.14</span> Analyse Trafic (Wireshark)</li>
+                        <li><span>R4.Cyber.02</span> Forensics & Malware</li>
+                        <li><span>R4.Cyber.03</span> Pentesting Basique</li>
+                    </ul>
+                </div>
+
+                <div class="glass res-card active reveal delay-2">
+                    <div class="res-header">Semestre 5 (Expert)</div>
+                    <ul class="mono-list">
+                        <li><span>R5.Cyber.10</span> Audits de Sécurité</li>
+                        <li><span>R5.Cyber.11</span> Supervision Sécurité (SIEM)</li>
+                    </ul>
+                    <div class="validated-badge"><i class="fa-solid fa-check"></i> En cours d'acquisition</div>
+                </div>
+            </div>
+
+            <div class="split-section">
+                <div class="glass content-box reveal">
+                    <h2><i class="fa-solid fa-briefcase"></i> SAE Réalisées</h2>
+                    <ul class="check-list">
+                        <li><strong>SAE 3.Cyber.04</strong> : Détecter un incident</li>
+                        <li class="highlight"><strong>SAE 5.Cyber.03</strong> : Supervision Avancée & SOC</li>
+                    </ul>
+                </div>
+
+                <div class="glass content-box reveal delay-1">
+                    <h2><i class="fa-solid fa-bullseye"></i> Objectifs Programme National</h2>
+                    <p>
+                        Le professionnel doit surveiller l'état de sécurité du SI en temps réel. Il déploie des sondes, 
+                        analyse les logs via un SIEM et réalise des audits (Pentesting) pour identifier les failles 
+                        avant qu'elles ne soient exploitées par des attaquants.
+                    </p>
+                </div>
+            </div>
+
+            <div class="glass reflection-card reveal delay-2">
+                <h2><i class="fa-solid fa-brain"></i> Réflexion sur les AC (Red/Blue Team)</h2>
+                <div class="reflection-content">
+                    <p>
+                        J'ai acquis l'AC35.01 lors de la <strong>SAE 5.Cyber.03</strong> en configurant une stack ELK pour 
+                        centraliser les logs. J'ai créé des règles de détection pour alerter sur des tentatives d'intrusion SSH.
+                    </p>
+                    <p>
+                        Mon entraînement quotidien sur <strong>Root-Me</strong> et <strong>HackTheBox</strong> (Projet Training) 
+                        renforce ma posture "Red Team", essentielle pour anticiper les attaques et mieux défendre (Blue Team).
+                    </p>
+                </div>
+            </div>
+
+            <div class="glass footer-ue reveal delay-3">
+                <p>Je valide l'UE 5 par ma capacité à détecter et réagir aux incidents de sécurité.</p>
+            </div>
+        </div>
+    </section>
+    <script src="js/script.js"></script>
+</body>
+</html>

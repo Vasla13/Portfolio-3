@@ -26,7 +26,7 @@
 
         <ul class="nav-links">
             <li><a href="#home" class="nav-item">Accueil</a></li>
-            <li><a href="#skills" class="nav-item">Compétences (UE)</a></li>
+            <li><a href="#skills" class="nav-item">Compétences</a></li>
             <li><a href="#experience" class="nav-item">Parcours</a></li>
             <li><a href="#projects" class="nav-item">Projets</a></li>
             <li><a href="https://vasla13.github.io/portfolio-2/" target="_blank" class="nav-item portfolio-link"><i class="fa-solid fa-folder-open"></i> Portfolio BUT2</a></li>
@@ -68,57 +68,62 @@
                 <span class="section-tag">Référentiel BUT R&T Cyber</span>
                 <h2 class="section-title">Mes 5 Compétences Clés</h2>
                 <div class="title-underline"></div>
-                <p style="margin-top: 15px; color: var(--text-gray);">Cliquez sur une compétence pour voir le détail du référentiel.</p>
+                <p style="margin-top: 15px; color: var(--text-gray);">Approche technique globale, de l'infrastructure à la sécurité.</p>
             </div>
 
             <div class="skills-wrapper">
-                <div class="skill-card glass reveal" onclick="openModal('modal-ue1')">
+                <div class="skill-card glass reveal" onclick="window.location.href='ue1.html'">
+                    <div class="card-bg-num">01</div>
                     <div class="skill-top">
                         <div class="icon-box"><i class="fa-solid fa-network-wired"></i></div>
                         <span class="ue-badge">UE 1</span>
                     </div>
-                    <h3>Administrer les réseaux & Internet</h3>
-                    <p class="skill-summary">Architecture, Routage, Systèmes.</p>
+                    <h3>Administrer les réseaux</h3>
+                    <p class="skill-summary">Architecture, Routage, Systèmes Linux/Windows.</p>
                     <div class="click-hint"><i class="fa-solid fa-plus"></i> Voir détail</div>
                 </div>
 
-                <div class="skill-card glass reveal delay-1" onclick="openModal('modal-ue2')">
+                <div class="skill-card glass reveal delay-1" onclick="window.location.href='ue2.html'">
+                    <div class="card-bg-num">02</div>
                     <div class="skill-top">
                         <div class="icon-box"><i class="fa-solid fa-tower-cell"></i></div>
                         <span class="ue-badge">UE 2</span>
                     </div>
-                    <h3>Connecter Entreprises & Usagers</h3>
-                    <p class="skill-summary">Technologies d'accès, Fibre, WiFi, ToIP.</p>
+                    <h3>Connecter l'entreprise</h3>
+                    <p class="skill-summary">Technologies d'accès, Fibre, WiFi, ToIP/VoIP.</p>
                     <div class="click-hint"><i class="fa-solid fa-plus"></i> Voir détail</div>
                 </div>
 
-                <div class="skill-card glass reveal delay-2" onclick="openModal('modal-ue3')">
+                <div class="skill-card glass reveal delay-2" onclick="window.location.href='ue3.html'">
+                    <div class="card-bg-num">03</div>
                     <div class="skill-top">
                         <div class="icon-box"><i class="fa-solid fa-code"></i></div>
                         <span class="ue-badge">UE 3</span>
                     </div>
-                    <h3>Créer des outils & applications</h3>
-                    <p class="skill-summary">Automatisation, Scripting, DevOps.</p>
+                    <h3>Programmer & Automatiser</h3>
+                    <p class="skill-summary">Scripting, DevOps, Développement d'outils.</p>
                     <div class="click-hint"><i class="fa-solid fa-plus"></i> Voir détail</div>
                 </div>
 
-                <div class="skill-card glass reveal delay-3" onclick="openModal('modal-ue4')">
+                <div class="skill-card glass reveal delay-3" onclick="window.location.href='ue4.html'">
+                    <div class="card-bg-num">04</div>
                     <div class="skill-top">
                         <div class="icon-box"><i class="fa-solid fa-shield-halved"></i></div>
                         <span class="ue-badge">UE 4</span>
                     </div>
                     <h3>Administrer un SI Sécurisé</h3>
-                    <p class="skill-summary">Hardening, Crypto, Pentesting.</p>
+                    <p class="skill-summary">Hardening, Cryptographie, Pentesting.</p>
                     <div class="click-hint"><i class="fa-solid fa-plus"></i> Voir détail</div>
                 </div>
 
-                <div class="skill-card glass reveal delay-4" onclick="openModal('modal-ue5')">
+                <div class="skill-card glass reveal delay-4" onclick="window.location.href='ue5.html'">
+                    <div class="card-bg-num">05</div>
                     <div class="skill-top">
                         <div class="icon-box active-learn"><i class="fa-solid fa-eye"></i></div>
                         <span class="ue-badge warn">UE 5</span>
                     </div>
                     <h3>Surveiller un SI Sécurisé</h3>
-                    <p class="skill-summary">SOC, SIEM, Gestion d'incidents.</p>
+                    <p class="skill-summary">SOC, SIEM, Gestion d'incidents & Forensics.</p>
                     <div class="click-hint"><i class="fa-solid fa-plus"></i> Voir détail</div>
                 </div>
             </div>
@@ -242,111 +247,6 @@
             </div>
         </div>
     </footer>
-
-    <dialog id="modal-ue1" class="modal glass">
-        <div class="modal-content">
-            <button class="close-btn" onclick="closeModal('modal-ue1')">&times;</button>
-            <h2>UE 1 : Administrer les réseaux et l’Internet</h2>
-            <div class="modal-body">
-                <h3>Compétences Essentielles (CE1)</h3>
-                <ul>
-                    <li>Choisir les solutions et technologies réseaux adaptées.</li>
-                    <li>Respecter les principes fondamentaux de la sécurité informatique.</li>
-                    <li>Résoudre les dysfonctionnements (Troubleshooting).</li>
-                </ul>
-                <h3>Apprentissages Critiques (AC)</h3>
-                <ul class="mono-list">
-                    <li>AC11.03 | Configurer les fonctions de base du réseau local.</li>
-                    <li>AC11.04 | Maîtriser les rôles et principes des OS (Linux/Windows).</li>
-                    <li>AC21.01 | Configurer et dépanner le routage dynamique.</li>
-                </ul>
-            </div>
-        </div>
-    </dialog>
-
-    <dialog id="modal-ue2" class="modal glass">
-        <div class="modal-content">
-            <button class="close-btn" onclick="closeModal('modal-ue2')">&times;</button>
-            <h2>UE 2 : Connecter les entreprises et les usagers</h2>
-            <div class="modal-body">
-                <h3>Compétences Essentielles (CE2)</h3>
-                <ul>
-                    <li>Déploiement des supports et systèmes de transmission (Fibre/Cuivre).</li>
-                    <li>Administration des accès fixes et mobiles (4G/5G).</li>
-                    <li>Mise en œuvre des services de ToIP/VoIP.</li>
-                </ul>
-                <h3>Apprentissages Critiques (AC)</h3>
-                <ul class="mono-list">
-                    <li>AC12.02 | Mesurer et analyser les signaux.</li>
-                    <li>AC22.02 | Connecter les systèmes de ToIP.</li>
-                    <li>AC32.01 | Administrer les infrastructures opérateurs.</li>
-                </ul>
-            </div>
-        </div>
-    </dialog>
-
-    <dialog id="modal-ue3" class="modal glass">
-        <div class="modal-content">
-            <button class="close-btn" onclick="closeModal('modal-ue3')">&times;</button>
-            <h2>UE 3 : Créer des outils & applications</h2>
-            <div class="modal-body">
-                <h3>Compétences Essentielles (CE3)</h3>
-                <ul>
-                    <li>Automatisation des tâches d'administration (Scripting).</li>
-                    <li>Développement d'outils internes et APIs.</li>
-                    <li>Intégration des problématiques de sécurité dans le code (DevSecOps).</li>
-                </ul>
-                <h3>Apprentissages Critiques (AC)</h3>
-                <ul class="mono-list">
-                    <li>AC13.01 | Automatiser l’administration système avec des scripts.</li>
-                    <li>AC23.01 | Utiliser un protocole réseau pour programmer une application.</li>
-                    <li>AC33.02 | Automatiser le déploiement (CI/CD).</li>
-                </ul>
-            </div>
-        </div>
-    </dialog>
-
-    <dialog id="modal-ue4" class="modal glass">
-        <div class="modal-content">
-            <button class="close-btn" onclick="closeModal('modal-ue4')">&times;</button>
-            <h2>UE 4 : Administrer un SI Sécurisé</h2>
-            <div class="modal-body">
-                <h3>Compétences Essentielles (CE4)</h3>
-                <ul>
-                    <li>Mise en œuvre d'une politique de sécurité (PSSI).</li>
-                    <li>Durcissement des systèmes (Hardening).</li>
-                    <li>Utilisation de la cryptographie (PKI, VPN, TLS).</li>
-                </ul>
-                <h3>Apprentissages Critiques (AC)</h3>
-                <ul class="mono-list">
-                    <li>AC24.01 | Mettre en œuvre les outils fondamentaux de sécurisation.</li>
-                    <li>AC34.02 | Déployer des outils avancés (FW Next-Gen, IDS/IPS).</li>
-                    <li>AC34.03 | Sécuriser les OS et services.</li>
-                </ul>
-            </div>
-        </div>
-    </dialog>
-
-    <dialog id="modal-ue5" class="modal glass">
-        <div class="modal-content">
-            <button class="close-btn" onclick="closeModal('modal-ue5')">&times;</button>
-            <h2>UE 5 : Surveiller un SI Sécurisé</h2>
-            <div class="modal-body">
-                <h3>Compétences Essentielles (CE5)</h3>
-                <ul>
-                    <li>Assurer une veille permanente (Threat Intelligence).</li>
-                    <li>Surveiller le comportement du réseau (Analyse de trafic).</li>
-                    <li>Gestion des incidents de sécurité (SOC).</li>
-                </ul>
-                <h3>Apprentissages Critiques (AC)</h3>
-                <ul class="mono-list">
-                    <li>AC35.01 | Surveiller l’activité du système d’information (SIEM).</li>
-                    <li>AC35.02 | Appliquer une méthodologie de tests de pénétration.</li>
-                    <li>AC25.01 | Administrer les protections contre les malwares.</li>
-                </ul>
-            </div>
-        </div>
-    </dialog>
 
     <dialog id="modal-p1" class="modal glass">
         <div class="modal-content">
