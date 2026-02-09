@@ -54,7 +54,46 @@ function renderProjectPage() {
         return;
     }
 
+    const hiddenSections = new Set(Array.isArray(data.hiddenSections) ? data.hiddenSections : []);
+    const hiddenAnchorItems = new Set(Array.isArray(data.hiddenAnchorItems) ? data.hiddenAnchorItems : []);
+
+    const contextSection = !hiddenSections.has("context")
+        ? `
+            <section id="prj-context" class="glass prj-panel reveal">
+                <h2><i class="fa-solid fa-compass"></i> Contexte et objectifs</h2>
+                <p>${data.context}</p>
+                <ul class="prj-check-list">
+                    ${data.objectivePoints.map(point => `<li>${point}</li>`).join("")}
+                </ul>
+            </section>
+        `
+        : "";
+
+    const workSection = !hiddenSections.has("work")
+        ? `
+            <section id="prj-work" class="glass prj-panel reveal delay-1">
+                <h2><i class="fa-solid fa-gear"></i> Realisations</h2>
+                <ul class="prj-check-list">
+                    ${data.achievements.map(item => `<li>${item}</li>`).join("")}
+                </ul>
+            </section>
+        `
+        : "";
+
+    const techSection = !hiddenSections.has("tech")
+        ? `
+            <section id="prj-tech" class="glass prj-panel reveal delay-1">
+                <h2><i class="fa-solid fa-layer-group"></i> Technologies et concepts</h2>
+                <div class="prj-tag-grid">
+                    ${data.technologies.map(tech => `<span>${tech}</span>`).join("")}
+                </div>
+                <p class="prj-result">${data.resultNote}</p>
+            </section>
+        `
+        : "";
+
     const installSection = Array.isArray(data.installationBlocks) && data.installationBlocks.length > 0
+        && !hiddenSections.has("install")
         ? `
             <section id="prj-install" class="glass prj-panel reveal delay-2">
                 <h2><i class="fa-solid fa-screwdriver-wrench"></i> Installation et demarrage</h2>
@@ -74,6 +113,7 @@ function renderProjectPage() {
         : "";
 
     const usageSection = Array.isArray(data.usagePoints) && data.usagePoints.length > 0
+        && !hiddenSections.has("usage")
         ? `
             <section id="prj-usage" class="glass prj-panel reveal delay-2">
                 <h2><i class="fa-solid fa-route"></i> Guide d'utilisation</h2>
@@ -85,6 +125,7 @@ function renderProjectPage() {
         : "";
 
     const skillsSection = Array.isArray(data.validatedSkills) && data.validatedSkills.length > 0
+        && !hiddenSections.has("skills")
         ? `
             <section id="prj-skills" class="glass prj-panel reveal delay-2">
                 <h2><i class="fa-solid fa-certificate"></i> Competences validees</h2>
@@ -96,6 +137,7 @@ function renderProjectPage() {
         : "";
 
     const linksSection = Array.isArray(data.links) && data.links.length > 0
+        && !hiddenSections.has("links")
         ? `
             <section class="glass prj-links reveal delay-3">
                 <h2><i class="fa-solid fa-link"></i> Liens utiles</h2>
@@ -108,14 +150,21 @@ function renderProjectPage() {
         `
         : "";
 
-    const anchorItems = [
-        '<a href="#prj-context">Contexte</a>',
-        '<a href="#prj-work">Realisations</a>',
-        '<a href="#prj-tech">Technologies</a>'
-    ];
-    if (installSection) anchorItems.push('<a href="#prj-install">Installation</a>');
-    if (usageSection) anchorItems.push('<a href="#prj-usage">Usage</a>');
-    if (skillsSection) anchorItems.push('<a href="#prj-skills">Competences</a>');
+    const anchorItems = [];
+    if (contextSection && !hiddenAnchorItems.has("context")) anchorItems.push('<a href="#prj-context">Contexte</a>');
+    if (workSection && !hiddenAnchorItems.has("work")) anchorItems.push('<a href="#prj-work">Realisations</a>');
+    if (techSection && !hiddenAnchorItems.has("tech")) anchorItems.push('<a href="#prj-tech">Technologies</a>');
+    if (installSection && !hiddenAnchorItems.has("install")) anchorItems.push('<a href="#prj-install">Installation</a>');
+    if (usageSection && !hiddenAnchorItems.has("usage")) anchorItems.push('<a href="#prj-usage">Usage</a>');
+    if (skillsSection && !hiddenAnchorItems.has("skills")) anchorItems.push('<a href="#prj-skills">Competences</a>');
+
+    const anchorNav = anchorItems.length > 0
+        ? `
+            <nav class="glass prj-anchor reveal delay-1" aria-label="Navigation interne projet">
+                ${anchorItems.join("")}
+            </nav>
+        `
+        : "";
 
     root.innerHTML = `
         <section class="glass prj-hero reveal">
@@ -143,32 +192,10 @@ function renderProjectPage() {
             </aside>
         </section>
 
-        <nav class="glass prj-anchor reveal delay-1" aria-label="Navigation interne projet">
-            ${anchorItems.join("")}
-        </nav>
-
-        <section id="prj-context" class="glass prj-panel reveal">
-            <h2><i class="fa-solid fa-compass"></i> Contexte et objectifs</h2>
-            <p>${data.context}</p>
-            <ul class="prj-check-list">
-                ${data.objectivePoints.map(point => `<li>${point}</li>`).join("")}
-            </ul>
-        </section>
-
-        <section id="prj-work" class="glass prj-panel reveal delay-1">
-            <h2><i class="fa-solid fa-gear"></i> Realisations</h2>
-            <ul class="prj-check-list">
-                ${data.achievements.map(item => `<li>${item}</li>`).join("")}
-            </ul>
-        </section>
-
-        <section id="prj-tech" class="glass prj-panel reveal delay-1">
-            <h2><i class="fa-solid fa-layer-group"></i> Technologies et concepts</h2>
-            <div class="prj-tag-grid">
-                ${data.technologies.map(tech => `<span>${tech}</span>`).join("")}
-            </div>
-            <p class="prj-result">${data.resultNote}</p>
-        </section>
+        ${anchorNav}
+        ${contextSection}
+        ${workSection}
+        ${techSection}
 
         ${installSection}
         ${usageSection}

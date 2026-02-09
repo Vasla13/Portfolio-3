@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Experience Pro | Dorner - Update Verwaltung</title>
+    <meta name="description" content="Detail de mon experience professionnelle chez DORNER Health IT sur le projet Dorner - Update Verwaltung.">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/experience-page.css">
+</head>
+<body class="experience-page">
+    <a href="#experience-main" class="skip-link">Aller au contenu</a>
+
+    <div class="bg-wrapper">
+        <div class="blob blob-1 exp-blob-primary"></div>
+        <div class="blob blob-2"></div>
+        <div class="grid-pattern"></div>
+    </div>
+
+    <nav class="navbar glass">
+        <a href="index.html" class="logo-brand">ERIC<span class="dot">.</span>P</a>
+        <a href="index.html#experience" class="btn-neon"><i class="fa-solid fa-arrow-left"></i> Retour parcours</a>
+    </nav>
+
+    <main id="experience-main" class="section exp-shell">
+        <div class="container">
+            <section class="glass exp-hero reveal">
+                <div class="exp-hero-main">
+                    <p class="exp-overline mono">Experience Professionnelle</p>
+                    <h1 class="exp-title">Dorner - Update Verwaltung</h1>
+                    <p class="exp-subtitle">
+                        Application web de gestion des mises a jour logicielles permettant
+                        l'administration de versions, l'automatisation de l'installation et la
+                        simplification du deploiement via SQLite (sans configuration MySQL separee).
+                    </p>
+                    <div class="exp-tags">
+                        <span>PHP</span>
+                        <span>SQLite</span>
+                        <span>Bash</span>
+                        <span>Apache</span>
+                        <span>Admin Tools</span>
+                    </div>
+                </div>
+                <aside class="exp-hero-side">
+                    <div class="exp-meta-item">
+                        <span>Entreprise</span>
+                        <p>DORNER Health IT</p>
+                    </div>
+                    <div class="exp-meta-item">
+                        <span>Periode</span>
+                        <p>2025 - Stage (8 semaines)</p>
+                    </div>
+                    <div class="exp-meta-item">
+                        <span>Role</span>
+                        <p>Developpeur Web Securise</p>
+                    </div>
+                </aside>
+            </section>
+
+            <section class="glass exp-panel reveal delay-1">
+                <h2><i class="fa-solid fa-diagram-project"></i> Fonctionnalites</h2>
+                <div class="exp-grid">
+                    <article class="exp-card">
+                        <h3>Authentification utilisateurs et administrateurs</h3>
+                        <ul class="exp-list">
+                            <li>Inscription, connexion et deconnexion.</li>
+                            <li>Gestion des droits selon le profil utilisateur.</li>
+                        </ul>
+                    </article>
+
+                    <article class="exp-card">
+                        <h3>Gestion des versions</h3>
+                        <ul class="exp-list">
+                            <li>Affichage, modification et suppression des versions logicielles.</li>
+                            <li>Televersement d'archives (en local ou via URL).</li>
+                        </ul>
+                    </article>
+
+                    <article class="exp-card">
+                        <h3>Processus d'installation (3 etapes)</h3>
+                        <ol class="exp-steps">
+                            <li>Extraction de l'archive.</li>
+                            <li>Configuration (execution d'un script d'installation).</li>
+                            <li>Deplacement des repertoires pertinents (imed-Info et imed-Admin) dans le dossier de version.</li>
+                        </ol>
+                    </article>
+
+                    <article class="exp-card">
+                        <h3>Fonction de lien court</h3>
+                        <ul class="exp-list">
+                            <li>Generation d'un token court pour rediriger directement vers la version installee.</li>
+                        </ul>
+                    </article>
+
+                    <article class="exp-card">
+                        <h3>Gestion simplifiee de la base de donnees</h3>
+                        <ul class="exp-list">
+                            <li>Utilisation de SQLite via PDO.</li>
+                            <li>Aucune configuration de base de donnees separee n'est necessaire.</li>
+                        </ul>
+                    </article>
+                </div>
+            </section>
+
+            <section class="glass exp-panel reveal delay-2">
+                <h2><i class="fa-solid fa-list-check"></i> Prerequis</h2>
+                <ul class="exp-list">
+                    <li>Serveur web: Apache, Nginx ou autre serveur compatible PHP.</li>
+                    <li>PHP: version 7.0 ou superieure (7.4+ recommandee).</li>
+                    <li>SQLite: integre a PHP, aucune installation supplementaire.</li>
+                    <li>Shell: Bash (pour l'execution du script d'installation).</li>
+                    <li>Droits de fichiers: ecriture requise sur <code>uploads/</code> et <code>versions/</code>.</li>
+                </ul>
+            </section>
+
+            <section class="glass exp-summary reveal delay-3">
+                <p>
+                    Ce projet m'a permis de travailler sur une application deploiement/update orientee production,
+                    avec une attention forte sur la fiabilite du processus d'installation, la securite des acces
+                    et la simplicite d'exploitation pour les administrateurs.
+                </p>
+                <a href="index.html#projects" class="btn-neon"><i class="fa-solid fa-diagram-project"></i> Voir les projets phares</a>
+            </section>
+        </div>
+    </main>
+
+    <script src="js/script.js" defer></script>
+</body>
+</html>
