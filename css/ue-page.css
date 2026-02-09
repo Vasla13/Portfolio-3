@@ -48,7 +48,7 @@
 
 .uex-kpi-grid {
     display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 150px), 1fr));
     gap: 12px;
 }
 
@@ -77,38 +77,14 @@
     line-height: 1.1;
 }
 
-.uex-anchor-nav {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 12px;
-    padding: 12px;
-    margin-bottom: 26px;
-    position: sticky;
-    top: 90px;
-    z-index: 900;
+.uex-kpi-meta {
+    margin-top: 4px;
+    color: #b2bfce;
+    font-size: 0.72rem;
+    font-family: var(--font-mono);
+    line-height: 1.4;
 }
 
-.uex-anchor-nav a {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    text-decoration: none;
-    color: #dbe5f1;
-    border: 1px solid rgba(255, 255, 255, 0.12);
-    background: rgba(8, 11, 18, 0.82);
-    border-radius: 999px;
-    padding: 8px 14px;
-    font-weight: 600;
-    font-size: 0.9rem;
-    transition: 0.25s ease;
-}
-
-.uex-anchor-nav a:hover,
-.uex-anchor-nav a:focus-visible {
-    color: var(--ue-accent);
-    border-color: var(--ue-accent);
-    outline: none;
-}
 
 .uex-section {
     margin-bottom: 42px;
@@ -321,7 +297,4 @@
         grid-template-columns: 1fr;
     }
 
-    .uex-anchor-nav {
-        top: 82px;
-    }
 }

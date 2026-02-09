@@ -1,0 +1,200 @@
+:root {
+    --cmp-admin: #00F0FF;
+    --cmp-connect: #22D3EE;
+    --cmp-dev: #6366F1;
+    --cmp-secure: #F59E0B;
+    --cmp-monitor: #EF4444;
+}
+
+.competences-page .section {
+    padding-top: 145px;
+    padding-bottom: 80px;
+}
+
+.cmp-shell {
+    min-height: 100vh;
+}
+
+.cmp-hero {
+    padding: 34px;
+    margin-bottom: 20px;
+    border-top: 1px solid var(--cyan);
+}
+
+.cmp-intro {
+    color: #b8c2cf;
+    max-width: 90ch;
+    margin-top: 14px;
+}
+
+.cmp-grades {
+    padding: 22px;
+    margin-bottom: 16px;
+    border-top: 1px solid var(--cyan);
+}
+
+.cmp-grades h2 {
+    color: var(--cyan);
+    font-size: 1.1rem;
+    margin-bottom: 10px;
+}
+
+.cmp-grade-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    gap: 8px;
+}
+
+.cmp-grade-list li {
+    display: flex;
+    justify-content: space-between;
+    gap: 16px;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 10px;
+    background: rgba(0, 0, 0, 0.2);
+    padding: 8px 10px;
+}
+
+.cmp-grade-list span {
+    color: #d6e0ec;
+    flex: 1 1 auto;
+}
+
+.cmp-grade-list strong {
+    color: var(--cyan);
+    font-size: 0.95rem;
+}
+
+.cmp-grid {
+    display: grid;
+    gap: 16px;
+}
+
+.cmp-card {
+    padding: 24px;
+    border-top: 2px solid rgba(255, 255, 255, 0.2);
+}
+
+.cmp-card:nth-child(1) {
+    border-top-color: var(--cmp-admin);
+}
+
+.cmp-card:nth-child(2) {
+    border-top-color: var(--cmp-connect);
+}
+
+.cmp-card:nth-child(3) {
+    border-top-color: var(--cmp-dev);
+}
+
+.cmp-card:nth-child(4) {
+    border-top-color: var(--cmp-secure);
+}
+
+.cmp-card:nth-child(5) {
+    border-top-color: var(--cmp-monitor);
+}
+
+.cmp-card h2 {
+    font-size: 1.55rem;
+    margin-bottom: 4px;
+}
+
+.cmp-subtitle {
+    color: #cdd6e3;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.cmp-text {
+    color: var(--text-gray);
+}
+
+.cmp-columns {
+    margin-top: 16px;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 18px;
+}
+
+.cmp-block h3 {
+    color: #e6edf8;
+    font-size: 0.95rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 10px;
+}
+
+.cmp-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    gap: 8px;
+}
+
+.cmp-list li {
+    position: relative;
+    padding-left: 16px;
+    color: #cfd8e5;
+    line-height: 1.5;
+    font-size: 0.92rem;
+}
+
+.cmp-list li::before {
+    content: "";
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--cyan);
+    position: absolute;
+    top: 0.58rem;
+    left: 0;
+}
+
+.cmp-synthesis {
+    padding: 28px;
+    margin-top: 20px;
+    border-left: 4px solid var(--cyan);
+}
+
+.cmp-synthesis h2 {
+    margin-bottom: 10px;
+    color: var(--cyan);
+}
+
+.cmp-synthesis p {
+    color: #c8d1de;
+}
+
+.cmp-synthesis p + p {
+    margin-top: 10px;
+}
+
+.cmp-actions {
+    margin-top: 16px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+@media (max-width: 900px) {
+    .cmp-columns {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 768px) {
+    .competences-page .section {
+        padding-top: 120px;
+    }
+
+    .cmp-hero,
+    .cmp-grades,
+    .cmp-card,
+    .cmp-synthesis {
+        padding: 20px;
+    }
+}

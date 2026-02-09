@@ -1,4 +1,12 @@
 document.addEventListener('DOMContentLoaded', () => {
+    const getNavbar = () => document.querySelector('.navbar');
+    const getSecondaryBars = () => Array.from(document.querySelectorAll('.uex-anchor-nav, .prj-anchor'));
+    const getTopBars = () => {
+        const navbar = getNavbar();
+        const secondaryBars = getSecondaryBars();
+        return navbar ? [navbar, ...secondaryBars] : secondaryBars;
+    };
+
     // --- Burger Menu ---
     const burger = document.querySelector('.burger');
     const nav = document.querySelector('.nav-links');
@@ -33,6 +41,72 @@ document.addEventListener('DOMContentLoaded', () => {
         links.forEach(link => {
             link.addEventListener('click', closeMenu);
         });
+    }
+
+    // --- Auto-hide top bars on downward scroll ---
+    if (getTopBars().length > 0) {
+        let lastScrollY = window.scrollY;
+        let ticking = false;
+        let secondaryHideTimer = null;
+        const revealOffset = 90;
+        const scrollDelta = 6;
+        const secondaryHideDelay = 110;
+
+        const clearSecondaryHideTimer = () => {
+            if (secondaryHideTimer !== null) {
+                window.clearTimeout(secondaryHideTimer);
+                secondaryHideTimer = null;
+            }
+        };
+
+        const showTopBars = () => {
+            clearSecondaryHideTimer();
+            getTopBars().forEach(bar => {
+                bar.classList.remove('scroll-hidden');
+            });
+        };
+
+        const hideTopBars = () => {
+            const navbar = getNavbar();
+            const secondaryBars = getSecondaryBars();
+
+            if (navbar) {
+                navbar.classList.add('scroll-hidden');
+            }
+
+            clearSecondaryHideTimer();
+            if (secondaryBars.length > 0) {
+                secondaryHideTimer = window.setTimeout(() => {
+                    getSecondaryBars().forEach(bar => {
+                        bar.classList.add('scroll-hidden');
+                    });
+                    secondaryHideTimer = null;
+                }, secondaryHideDelay);
+            }
+        };
+
+        const updateTopBarsVisibility = () => {
+            const currentScrollY = window.scrollY;
+            const menuIsOpen = Boolean(nav && nav.classList.contains('active'));
+
+            if (menuIsOpen || currentScrollY <= revealOffset) {
+                showTopBars();
+            } else if (currentScrollY > lastScrollY + scrollDelta) {
+                hideTopBars();
+            } else if (currentScrollY < lastScrollY - scrollDelta) {
+                showTopBars();
+            }
+
+            lastScrollY = currentScrollY;
+            ticking = false;
+        };
+
+        window.addEventListener('scroll', () => {
+            if (!ticking) {
+                window.requestAnimationFrame(updateTopBarsVisibility);
+                ticking = true;
+            }
+        }, { passive: true });
     }
 
     // --- Section spy for better navigation context ---

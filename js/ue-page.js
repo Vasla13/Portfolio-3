@@ -78,6 +78,15 @@ function renderUEPage() {
     }
 
     const resourcesCount = data.resources.reduce((sum, group) => sum + group.items.length, 0);
+    const averageKpi = data.average
+        ? `
+            <article class="uex-kpi">
+                <p class="uex-kpi-label">Moyenne</p>
+                <p class="uex-kpi-value">${data.average}</p>
+                <p class="uex-kpi-meta">${data.gradeLabel || ""}</p>
+            </article>
+        `
+        : "";
 
     root.innerHTML = `
         <section class="glass uex-hero reveal">
@@ -99,14 +108,9 @@ function renderUEPage() {
                     <p class="uex-kpi-label">Niveau</p>
                     <p class="uex-kpi-value">${data.code}</p>
                 </article>
+                ${averageKpi}
             </div>
         </section>
-
-        <nav class="glass uex-anchor-nav reveal delay-1" aria-label="Navigation interne">
-            <a href="#ue-resources">Ressources</a>
-            <a href="#ue-practice">SAE & objectifs</a>
-            <a href="#ue-reflection">Reflexion</a>
-        </nav>
 
         <section id="ue-resources" class="uex-section">
             <header class="section-header uex-section-header">

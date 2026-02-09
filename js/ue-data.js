@@ -2,6 +2,8 @@ window.UE_CONTENT = {
     ue1: {
         id: 1,
         code: "UE 1",
+        gradeLabel: "UE5.1 [Administrer]",
+        average: "16.58",
         path: "ue1.html",
         theme: {
             accent: "#00F0FF",
@@ -32,7 +34,7 @@ window.UE_CONTENT = {
                 ]
             },
             {
-                label: "Semestre 5 (Expert)",
+                label: "Semestre 5",
                 active: true,
                 items: [
                     { code: "R5.01", text: "WiFi Avance et Mobilite" },
@@ -61,6 +63,8 @@ window.UE_CONTENT = {
     ue2: {
         id: 2,
         code: "UE 2",
+        gradeLabel: "UE5.2 [Connecter]",
+        average: "15.48",
         path: "ue2.html",
         theme: {
             accent: "#22D3EE",
@@ -91,7 +95,7 @@ window.UE_CONTENT = {
                 ]
             },
             {
-                label: "Semestre 5 (Expert)",
+                label: "Semestre 5",
                 active: true,
                 items: [
                     { code: "R5.01", text: "WiFi Avance" },
@@ -120,6 +124,8 @@ window.UE_CONTENT = {
     ue3: {
         id: 3,
         code: "UE 3",
+        gradeLabel: "UE5.3 [Programmer]",
+        average: "16.79",
         path: "ue3.html",
         theme: {
             accent: "#6366F1",
@@ -150,7 +156,7 @@ window.UE_CONTENT = {
                 ]
             },
             {
-                label: "Semestre 5 (Expert)",
+                label: "Semestre 5",
                 active: true,
                 items: [
                     { code: "R5.02", text: "Supervision (Scripting)" },
@@ -179,6 +185,8 @@ window.UE_CONTENT = {
     ue4: {
         id: 4,
         code: "UE 4",
+        gradeLabel: "UE5.Cyber.4 [Securiser]",
+        average: "15.25",
         path: "ue4.html",
         theme: {
             accent: "#F59E0B",
@@ -199,7 +207,7 @@ window.UE_CONTENT = {
                 ]
             },
             {
-                label: "Semestre 5 (Expert)",
+                label: "Semestre 5",
                 active: true,
                 items: [
                     { code: "R5.Cyber.09", text: "Archis Securisees" },
@@ -227,6 +235,8 @@ window.UE_CONTENT = {
     ue5: {
         id: 5,
         code: "UE 5",
+        gradeLabel: "UE5.Cyber.5 [Surveiller]",
+        average: "14.06",
         path: "ue5.html",
         theme: {
             accent: "#EF4444",
@@ -247,7 +257,7 @@ window.UE_CONTENT = {
                 ]
             },
             {
-                label: "Semestre 5 (Expert)",
+                label: "Semestre 5",
                 active: true,
                 items: [
                     { code: "R5.Cyber.10", text: "Audits de Securite" },
@@ -266,7 +276,7 @@ window.UE_CONTENT = {
         reflectionTitle: "Reflexion sur les AC (Red/Blue Team)",
         reflectionParagraphs: [
             "J'ai acquis l'AC35.01 lors de la SAE 5.Cyber.03 en configurant une stack ELK pour centraliser les logs. J'ai cree des regles de detection pour alerter sur des tentatives d'intrusion SSH.",
-            "Mon entrainement quotidien sur Root-Me et HackTheBox (Projet Training) renforce ma posture Red Team, essentielle pour anticiper les attaques et mieux defendre (Blue Team)."
+            "Mon entrainement quotidien sur Root-Me (Projet Training) renforce ma posture Red Team, essentielle pour anticiper les attaques et mieux defendre (Blue Team)."
         ],
         conclusion: "Je valide l'UE 5 par ma capacite a detecter et reagir aux incidents de securite."
     }
