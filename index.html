@@ -7,6 +7,7 @@
     <meta name="description" content="Portfolio Eric Petersen - BUT R&T Cybersécurité. Expert en architectures sécurisées et automatisation.">
 
     <meta property="og:title" content="Eric Petersen | Portfolio Cyber">
+    <meta property="og:description" content="Portfolio d'Eric Petersen : cybersécurité, réseaux, cloud et DevSecOps.">
     <meta property="og:image" content="assets/profil.jpg">
 
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
@@ -14,6 +15,7 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+    <a href="#home" class="skip-link">Aller au contenu</a>
 
     <div class="bg-wrapper">
         <div class="blob blob-1"></div>
@@ -22,19 +24,19 @@
     </div>
 
     <nav class="navbar glass">
-        <a href="#" class="logo-brand">ERIC<span class="dot">.</span>P</a>
+        <a href="#home" class="logo-brand">ERIC<span class="dot">.</span>P</a>
 
         <ul class="nav-links">
             <li><a href="#home" class="nav-item">Accueil</a></li>
             <li><a href="#skills" class="nav-item">Compétences</a></li>
             <li><a href="#experience" class="nav-item">Parcours</a></li>
             <li><a href="#projects" class="nav-item">Projets</a></li>
-            <li><a href="https://vasla13.github.io/portfolio-2/" target="_blank" class="nav-item portfolio-link"><i class="fa-solid fa-folder-open"></i> Portfolio BUT2</a></li>
-            <li><a href="https://e-portfolio.uha.fr/view/view.php?t=30cd063b10ee63ee04aa" target="_blank" class="nav-item portfolio-link"><i class="fa-solid fa-folder-open"></i> Portfolio BUT1</a></li>
+            <li><a href="https://vasla13.github.io/portfolio-2/" target="_blank" rel="noopener noreferrer" class="nav-item portfolio-link"><i class="fa-solid fa-folder-open"></i> Portfolio BUT2</a></li>
+            <li><a href="https://e-portfolio.uha.fr/view/view.php?t=30cd063b10ee63ee04aa" target="_blank" rel="noopener noreferrer" class="nav-item portfolio-link"><i class="fa-solid fa-folder-open"></i> Portfolio BUT1</a></li>
             <li><a href="#contact" class="btn-neon">Contact</a></li>
         </ul>
 
-        <div class="burger"><span></span><span></span><span></span></div>
+        <div class="burger" role="button" tabindex="0" aria-label="Ouvrir ou fermer le menu" aria-expanded="false"><span></span><span></span><span></span></div>
     </nav>
 
     <header id="home" class="hero">
@@ -56,8 +58,9 @@
             
             <div class="hero-buttons fade-up delay-4">
                 <a href="#projects" class="btn btn-primary">Voir mes projets <i class="fa-solid fa-arrow-right"></i></a>
-                <a href="assets/cv_fr.pdf" download class="btn btn-outline"><i class="fa-solid fa-download"></i> CV PDF</a>
+                <a href="assets/cv_francais.pdf" download class="btn btn-outline"><i class="fa-solid fa-download"></i> CV PDF</a>
             </div>
+            <p id="last-ue-note" class="last-ue-note fade-up delay-4" aria-live="polite"></p>
         </div>
         <div class="scroll-indicator"><div class="mouse"></div></div>
     </header>
@@ -68,11 +71,11 @@
                 <span class="section-tag">Référentiel BUT R&T Cyber</span>
                 <h2 class="section-title">Mes 5 Compétences Clés</h2>
                 <div class="title-underline"></div>
-                <p style="margin-top: 15px; color: var(--text-gray);">Approche technique globale, de l'infrastructure à la sécurité.</p>
+                <p class="section-subtext">Approche technique globale, de l'infrastructure à la sécurité.</p>
             </div>
 
             <div class="skills-wrapper">
-                <div class="skill-card glass reveal" onclick="window.location.href='ue1.html'">
+                <div class="skill-card glass reveal" role="link" tabindex="0" data-href="ue1.html" data-ue-label="UE 1 - Administrer les réseaux" aria-label="Voir le détail de l'UE 1">
                     <div class="card-bg-num">01</div>
                     <div class="skill-top">
                         <div class="icon-box"><i class="fa-solid fa-network-wired"></i></div>
@@ -83,7 +86,7 @@
                     <div class="click-hint"><i class="fa-solid fa-plus"></i> Voir détail</div>
                 </div>
 
-                <div class="skill-card glass reveal delay-1" onclick="window.location.href='ue2.html'">
+                <div class="skill-card glass reveal delay-1" role="link" tabindex="0" data-href="ue2.html" data-ue-label="UE 2 - Connecter l'entreprise" aria-label="Voir le détail de l'UE 2">
                     <div class="card-bg-num">02</div>
                     <div class="skill-top">
                         <div class="icon-box"><i class="fa-solid fa-tower-cell"></i></div>
@@ -94,7 +97,7 @@
                     <div class="click-hint"><i class="fa-solid fa-plus"></i> Voir détail</div>
                 </div>
 
-                <div class="skill-card glass reveal delay-2" onclick="window.location.href='ue3.html'">
+                <div class="skill-card glass reveal delay-2" role="link" tabindex="0" data-href="ue3.html" data-ue-label="UE 3 - Programmer et Automatiser" aria-label="Voir le détail de l'UE 3">
                     <div class="card-bg-num">03</div>
                     <div class="skill-top">
                         <div class="icon-box"><i class="fa-solid fa-code"></i></div>
@@ -105,7 +108,7 @@
                     <div class="click-hint"><i class="fa-solid fa-plus"></i> Voir détail</div>
                 </div>
 
-                <div class="skill-card glass reveal delay-3" onclick="window.location.href='ue4.html'">
+                <div class="skill-card glass reveal delay-3" role="link" tabindex="0" data-href="ue4.html" data-ue-label="UE 4 - Administrer un SI Sécurisé" aria-label="Voir le détail de l'UE 4">
                     <div class="card-bg-num">04</div>
                     <div class="skill-top">
                         <div class="icon-box"><i class="fa-solid fa-shield-halved"></i></div>
@@ -116,7 +119,7 @@
                     <div class="click-hint"><i class="fa-solid fa-plus"></i> Voir détail</div>
                 </div>
 
-                <div class="skill-card glass reveal delay-4" onclick="window.location.href='ue5.html'">
+                <div class="skill-card glass reveal delay-4" role="link" tabindex="0" data-href="ue5.html" data-ue-label="UE 5 - Surveiller un SI Sécurisé" aria-label="Voir le détail de l'UE 5">
                     <div class="card-bg-num">05</div>
                     <div class="skill-top">
                         <div class="icon-box active-learn"><i class="fa-solid fa-eye"></i></div>
@@ -190,36 +193,36 @@
             </div>
 
             <div class="projects-grid">
-                <article class="project-card glass reveal" onclick="openModal('modal-p1')">
+                <article class="project-card glass reveal" role="link" tabindex="0" data-href="project-sae501.html" aria-label="Ouvrir la page projet SAE 5.01 Tracage GNSS LoRaWAN">
                     <div class="card-image iot-bg">
                         <span class="badge-type">SAE 5.01</span>
                     </div>
                     <div class="card-body">
-                        <h3 class="mono">IoT LoRaWAN Sécurisé</h3>
-                        <p>Architecture complète de collecte de données chiffrées.</p>
-                        <div class="tech-stack"><span>Python</span><span>MQTT/TLS</span></div>
+                        <h3 class="mono">Traçage GNSS LoRaWAN</h3>
+                        <p>Conception d'un système autonome de suivi véhicule via TTN avec optimisation énergétique.</p>
+                        <div class="tech-stack"><span>LoRaWAN</span><span>MicroPython</span><span>Node-RED</span></div>
                     </div>
                 </article>
 
-                <article class="project-card glass reveal delay-1" onclick="openModal('modal-p2')">
-                    <div class="card-image homelab-bg">
-                        <span class="badge-type">SAE 5.Cyber.03</span>
+                <article class="project-card glass reveal delay-1" role="link" tabindex="0" data-href="project-instravel.html" aria-label="Ouvrir la page projet Instravel">
+                    <div class="card-image instravel-bg">
+                        <span class="badge-type">Projet Web</span>
                     </div>
                     <div class="card-body">
-                        <h3 class="mono">Homelab Proxmox</h3>
-                        <p>Cluster de virtualisation pour simulations d'attaques.</p>
-                        <div class="tech-stack"><span>Proxmox</span><span>AD</span><span>Pfsense</span></div>
+                        <h3 class="mono">Instravel</h3>
+                        <p>Application de gestion de voyages avec profils, étapes, confidentialité et notifications.</p>
+                        <div class="tech-stack"><span>Python</span><span>Docker</span><span>SQL</span></div>
                     </div>
                 </article>
 
-                <article class="project-card glass reveal delay-2" onclick="openModal('modal-p3')">
-                    <div class="card-image ctf-bg">
-                        <span class="badge-type">Training</span>
+                <article class="project-card glass reveal delay-2" role="link" tabindex="0" data-href="project-ae5-cyber03.html" aria-label="Ouvrir la page projet AE 5.Cyber.03 Stormshield CSNA">
+                    <div class="card-image stormshield-bg">
+                        <span class="badge-type">AÉ 5.Cyber.03</span>
                     </div>
                     <div class="card-body">
-                        <h3 class="mono">Pentesting & CTF</h3>
-                        <p>Entraînement offensif sur Root-Me et HackTheBox.</p>
-                        <div class="tech-stack"><span>Kali</span><span>Burp</span><span>Nmap</span></div>
+                        <h3 class="mono">Stormshield CSNA</h3>
+                        <p>Sécurisation et supervision avancées d'un SI avec certification CSNA validée (86%).</p>
+                        <div class="tech-stack"><span>Stormshield SNS</span><span>IPSec</span><span>PKI</span></div>
                     </div>
                 </article>
             </div>
@@ -237,8 +240,8 @@
                 <div class="footer-contact">
                     <a href="mailto:eripet05@gmail.com" class="footer-link">eripet05@gmail.com</a>
                     <div class="footer-socials">
-                        <a href="https://www.linkedin.com/in/%C3%A9ric-petersen-51a138277/" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
-                        <a href="https://github.com/Vasla13" target="_blank"><i class="fa-brands fa-github"></i></a>
+                        <a href="https://www.linkedin.com/in/%C3%A9ric-petersen-51a138277/" target="_blank" rel="noopener noreferrer" aria-label="Profil LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
+                        <a href="https://github.com/Vasla13" target="_blank" rel="noopener noreferrer" aria-label="Profil GitHub"><i class="fa-brands fa-github"></i></a>
                     </div>
                 </div>
             </div>
@@ -247,52 +250,6 @@
             </div>
         </div>
     </footer>
-
-    <dialog id="modal-p1" class="modal glass">
-        <div class="modal-content">
-            <button class="close-btn" onclick="closeModal('modal-p1')">&times;</button>
-            <h2>Projet IoT LoRaWAN</h2>
-            <div class="modal-body">
-                <p>Mise en place d'une chaine de collecte sécurisée.</p>
-                <ul>
-                    <li>Capteurs : Configuration des devices LoRa.</li>
-                    <li>Transport : Gateway LoRaWAN vers Network Server.</li>
-                    <li>Application : Décodage Payload et envoi MQTT sécurisé (TLS).</li>
-                    <li>Viz : Dashboard Grafana pour le monitoring temps réel.</li>
-                </ul>
-            </div>
-        </div>
-    </dialog>
-    
-    <dialog id="modal-p2" class="modal glass">
-        <div class="modal-content">
-            <button class="close-btn" onclick="closeModal('modal-p2')">&times;</button>
-            <h2>Homelab Proxmox</h2>
-            <div class="modal-body">
-                <p>Environnement de virtualisation pour l'expérimentation.</p>
-                <ul>
-                    <li>Infrastructure : Cluster Proxmox VE.</li>
-                    <li>Réseau : Segmentation VLAN, Firewall Pfsense.</li>
-                    <li>Services : Active Directory, DNS, DHCP.</li>
-                </ul>
-            </div>
-        </div>
-    </dialog>
-
-    <dialog id="modal-p3" class="modal glass">
-        <div class="modal-content">
-            <button class="close-btn" onclick="closeModal('modal-p3')">&times;</button>
-            <h2>Pentesting & CTF</h2>
-            <div class="modal-body">
-                <p>Développement des compétences offensives (Red Team).</p>
-                <ul>
-                    <li>Plateformes : Root-Me, HackTheBox.</li>
-                    <li>Outils : Suite Kali Linux (Nmap, Metasploit, Burp Suite).</li>
-                    <li>Objectifs : Comprendre les attaques pour mieux défendre.</li>
-                </ul>
-            </div>
-        </div>
-    </dialog>
 
     <script src="js/script.js"></script>
 </body>
