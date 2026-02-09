@@ -120,6 +120,13 @@ body {
     border-color: var(--cyan); background: rgba(0, 240, 255, 0.08); 
     color: var(--cyan); box-shadow: 0 0 20px rgba(0, 240, 255, 0.1);
 }
+.btn-flag {
+    width: 20px;
+    height: 14px;
+    object-fit: cover;
+    border-radius: 2px;
+    border: 1px solid rgba(255, 255, 255, 0.35);
+}
 .btn-neon {
     padding: 8px 20px; border-radius: 50px;
     background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.1);
@@ -153,21 +160,6 @@ body {
 .hero p { max-width: 650px; margin: 0 auto 45px; color: var(--text-gray); font-size: 1.15rem; line-height: 1.7; }
 .hero-buttons { display: flex; gap: 20px; justify-content: center; }
 .hero-content { display: flex; flex-direction: column; align-items: center; }
-.last-ue-note {
-    margin-top: 18px;
-    color: #c8d1dc;
-    font-size: 0.92rem;
-    padding: 8px 14px;
-    border: 1px dashed rgba(255, 255, 255, 0.22);
-    border-radius: 999px;
-    background: rgba(8, 12, 18, 0.45);
-}
-.last-ue-note a {
-    color: var(--cyan);
-    text-decoration: none;
-    font-weight: 700;
-}
-.last-ue-note a:hover { text-decoration: underline; }
 
 .scroll-indicator {
     position: absolute;
@@ -233,25 +225,6 @@ body {
 }
 .skill-card:hover::before { transform: scaleX(1); }
 .skill-card:hover { transform: translateY(-10px); background: rgba(255,255,255,0.05); box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.5); border-color: rgba(255,255,255,0.1); }
-.skill-card.recent-ue {
-    border-color: rgba(0, 240, 255, 0.45);
-    box-shadow: 0 16px 30px -16px rgba(0, 240, 255, 0.45);
-}
-.skill-card.recent-ue::after {
-    content: "Derniere visite";
-    position: absolute;
-    top: 14px;
-    left: 14px;
-    font-size: 0.68rem;
-    letter-spacing: 1px;
-    text-transform: uppercase;
-    color: var(--cyan);
-    background: rgba(0, 240, 255, 0.12);
-    border: 1px solid rgba(0, 240, 255, 0.3);
-    border-radius: 999px;
-    padding: 3px 8px;
-    font-weight: 700;
-}
 
 /* Numéro en fond */
 .card-bg-num {
@@ -395,10 +368,6 @@ body {
     .footer-grid { flex-direction: column; text-align: center; }
     .footer-contact { flex-direction: column; gap: 20px; }
     .scroll-indicator { display: none; }
-    .last-ue-note {
-        border-radius: 12px;
-        line-height: 1.4;
-    }
     .timeline-line { left: 12px; transform: none; }
     .timeline-row { justify-content: flex-start; padding-left: 28px; }
     .timeline-dot { left: 12px; transform: translateX(-50%); }

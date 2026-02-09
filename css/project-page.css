@@ -263,29 +263,6 @@
     margin-bottom: 24px;
 }
 
-.prj-journey-label {
-    color: var(--text-gray);
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    font-size: 0.76rem;
-    font-weight: 700;
-    margin-bottom: 10px;
-}
-
-.prj-progress {
-    height: 9px;
-    border-radius: 999px;
-    background: rgba(255, 255, 255, 0.1);
-    overflow: hidden;
-    margin-bottom: 14px;
-}
-
-.prj-progress span {
-    display: block;
-    height: 100%;
-    background: linear-gradient(90deg, var(--prj-accent), #ffffff);
-}
-
 .prj-journey-controls {
     display: flex;
     flex-wrap: wrap;

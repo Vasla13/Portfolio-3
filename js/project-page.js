@@ -14,10 +14,6 @@ function buildProjectNav(current) {
 
     return `
         <section class="glass prj-journey reveal delay-3" aria-label="Navigation projets">
-            <p class="prj-journey-label">Projet ${current.id} sur ${projects.length}</p>
-            <div class="prj-progress" role="progressbar" aria-valuemin="1" aria-valuemax="${projects.length}" aria-valuenow="${current.id}">
-                <span style="width:${(current.id / projects.length) * 100}%"></span>
-            </div>
             <div class="prj-journey-controls">
                 ${prevControl}
                 <a href="index.html#projects" class="btn-neon"><i class="fa-solid fa-table-cells-large"></i> Tous les projets</a>

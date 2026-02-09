@@ -283,35 +283,6 @@
     margin-bottom: 24px;
 }
 
-.uex-journey-text h2 {
-    font-size: 1.2rem;
-    margin-bottom: 14px;
-}
-
-.uex-journey-tag {
-    color: var(--text-gray);
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    font-size: 0.75rem;
-    font-weight: 700;
-    margin-bottom: 6px;
-}
-
-.uex-progress-track {
-    height: 9px;
-    width: 100%;
-    border-radius: 999px;
-    background: rgba(255, 255, 255, 0.09);
-    overflow: hidden;
-    margin-bottom: 16px;
-}
-
-.uex-progress-track span {
-    display: block;
-    height: 100%;
-    background: linear-gradient(90deg, var(--ue-accent), #ffffff);
-}
-
 .uex-journey-links {
     display: flex;
     flex-wrap: wrap;

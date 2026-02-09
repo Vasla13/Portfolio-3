@@ -46,13 +46,6 @@ function buildNavigation(current) {
 
     return `
         <section class="glass uex-journey reveal delay-3" aria-label="Navigation entre les UE">
-            <div class="uex-journey-text">
-                <p class="uex-journey-tag">Progression du parcours</p>
-                <h2>${current.code} sur 5 - ${current.title}</h2>
-            </div>
-            <div class="uex-progress-track" role="progressbar" aria-valuemin="1" aria-valuemax="5" aria-valuenow="${current.id}" aria-label="Progression des UE">
-                <span style="width:${current.id * 20}%"></span>
-            </div>
             <div class="uex-journey-links">
                 ${prevLink}
                 <a href="index.html#skills" class="btn-neon"><i class="fa-solid fa-table-cells-large"></i> Toutes les UE</a>

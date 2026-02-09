@@ -1,15 +1,4 @@
 document.addEventListener('DOMContentLoaded', () => {
-    const safeStorage = (() => {
-        try {
-            const key = '__portfolio_probe__';
-            window.localStorage.setItem(key, '1');
-            window.localStorage.removeItem(key);
-            return window.localStorage;
-        } catch (error) {
-            return null;
-        }
-    })();
-
     // --- Burger Menu ---
     const burger = document.querySelector('.burger');
     const nav = document.querySelector('.nav-links');
@@ -88,21 +77,6 @@ document.addEventListener('DOMContentLoaded', () => {
     document.querySelectorAll('[data-href][role="link"]').forEach(card => {
         const goTo = () => {
             const href = card.getAttribute('data-href');
-
-            if (safeStorage && href) {
-                try {
-                    const ueLabel = card.getAttribute('data-ue-label');
-                    if (ueLabel) {
-                        safeStorage.setItem('last_ue_visit', JSON.stringify({
-                            href,
-                            label: ueLabel
-                        }));
-                    }
-                } catch (error) {
-                    // Ignore storage failures and keep navigation functional.
-                }
-            }
-
             if (href) window.location.href = href;
         };
 
@@ -114,29 +88,6 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     });
-
-    // --- Last visited UE (index only) ---
-    const lastUENote = document.getElementById('last-ue-note');
-    if (lastUENote) {
-        if (safeStorage) {
-            try {
-                const raw = safeStorage.getItem('last_ue_visit');
-                const parsed = raw ? JSON.parse(raw) : null;
-                if (parsed && parsed.href && parsed.label) {
-                    lastUENote.innerHTML = `Derniere competence consultee : <a href="${parsed.href}">${parsed.label}</a>`;
-                    document.querySelectorAll('.skill-card[data-href]').forEach(card => {
-                        card.classList.toggle('recent-ue', card.getAttribute('data-href') === parsed.href);
-                    });
-                } else {
-                    lastUENote.textContent = 'Aucune UE ouverte recemment. Choisissez une competence pour voir votre progression.';
-                }
-            } catch (error) {
-                lastUENote.textContent = 'Choisissez une competence pour suivre votre progression.';
-            }
-        } else {
-            lastUENote.textContent = 'Choisissez une competence pour suivre votre progression.';
-        }
-    }
 
     // --- Typing Effect ---
     const txtElement = document.querySelector('.txt-type');
