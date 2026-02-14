@@ -12,7 +12,7 @@ window.UE_CONTENT = {
         },
         pageTag: "Competence 1",
         title: "Administrer les reseaux et l'Internet",
-        preamble: "L'objectif de cette page est de justifier mon obtention de l'UE 1. A travers les preuves ci-dessous, je demontre ma capacite a administrer des infrastructures complexes, de la configuration locale jusqu'a l'architecture securisee d'entreprise.",
+        preamble: "L'objectif de cette page est de presenter mon avancement sur l'UE 1. A travers les preuves ci-dessous, je demontre ma capacite a administrer des infrastructures complexes, de la configuration locale jusqu'a l'architecture securisee d'entreprise.",
         resources: [
             {
                 label: "Semestres 1 et 2",
@@ -55,10 +55,10 @@ window.UE_CONTENT = {
         objectives: "Le professionnel R&T est le garant du bon fonctionnement du systeme d'information. Il doit gerer la diversite des equipements (Routeurs, Switchs, Firewalls), assurer leur interconnexion securisee et repondre aux besoins des utilisateurs en termes de disponibilite et de performance.",
         reflectionTitle: "Reflexion sur les Apprentissages Critiques (AC)",
         reflectionParagraphs: [
-            "Durant la SAE 5.01 et mon stage, j'ai valide le niveau 3 de cette competence. J'ai concu une architecture reseau integrant des contraintes fortes de securite (Segmentation, Chiffrement).",
-            "La ressource R5.01 m'a permis de maitriser les environnements WiFi haute densite, tandis que la R3.02 (Reseaux Operateurs) m'a donne les cles pour comprendre le routage a grande echelle (BGP). Je suis aujourd'hui autonome sur l'administration d'un SI complet."
+            "La SAE 5.01 (CyberFi) m'a permis d'approfondir cette competence en concevant une architecture IoT securisee, de bout en bout, avec segmentation reseau, isolation des flux et chiffrement des echanges.",
+            "Ce projet m'a amene a administrer l'infrastructure technique (connectivite, services et politiques de securite) en garantissant la disponibilite du systeme et la protection des donnees."
         ],
-        conclusion: "Je confirme l'acquisition de l'UE 1 grace a la validation de mes projets et de mes semestres."
+        conclusion: "Je suis deja tres avance sur l'UE 1. Il me reste quelques cours pour perfectionner l'ensemble, puis un stage de 4 mois pour consolider cette progression."
     },
     ue2: {
         id: 2,
@@ -73,7 +73,7 @@ window.UE_CONTENT = {
         },
         pageTag: "Competence 2",
         title: "Connecter les entreprises et les usagers",
-        preamble: "Cette page atteste de l'acquisition de l'UE 2. Je presente ici les ressources et situations professionnelles qui m'ont permis de maitriser les technologies d'acces, la ToIP et la convergence numerique.",
+        preamble: "Cette page presente mon avancement sur l'UE 2. Je detaille les ressources et situations professionnelles qui me permettent de maitriser les technologies d'acces, la ToIP et la convergence numerique.",
         resources: [
             {
                 label: "Semestres 1 et 2",
@@ -116,10 +116,10 @@ window.UE_CONTENT = {
         objectives: "Le professionnel doit savoir interconnecter les sites d'une entreprise et raccorder les usagers via diverses technologies (Fibre, 4G/5G, WiFi). Il assure egalement la convergence des services (Voix, Donnees, Video) en garantissant la qualite de service (QoS).",
         reflectionTitle: "Reflexion sur les AC (AC 21.05 et 32.01)",
         reflectionParagraphs: [
-            "Mon projet IoT LoRaWAN a ete determinant. J'ai mis en place une chaine de transmission complete utilisant la radiofrequence (LoRa) puis le reseau IP. Cela m'a permis de comprendre les enjeux de la couverture, de l'attenuation du signal et de l'interconnexion heterogene.",
-            "De plus, l'etude des architectures 5G en R5.03 m'a donne une vision claire des reseaux operateurs modernes et de leur securisation."
+            "La SAE 5.01 (CyberFi) m'a permis de concevoir et deployer une chaine complete de transmission, du capteur IoT jusqu'au systeme d'exploitation des donnees.",
+            "Ce projet m'a permis de maitriser l'interconnexion entre reseaux radio et reseaux IP, en assurant la continuite de service et la fiabilite des echanges entre equipements et usagers."
         ],
-        conclusion: "Je valide l'UE 2 par ma capacite a connecter et faire converger les reseaux."
+        conclusion: "Je suis deja tres avance sur l'UE 2. Il me reste quelques cours pour perfectionner l'ensemble, puis un stage de 4 mois pour consolider cette progression."
     },
     ue3: {
         id: 3,
@@ -134,7 +134,7 @@ window.UE_CONTENT = {
         },
         pageTag: "Competence 3",
         title: "Creer des outils et applications",
-        preamble: "Cette page justifie l'acquisition de l'UE 3. J'y demontre mes competences en developpement, automatisation et gestion de projet, essentielles pour mon profil oriente DevSecOps.",
+        preamble: "Cette page presente mon avancement sur l'UE 3. J'y demontre mes competences en developpement, automatisation et gestion de projet, essentielles pour mon profil oriente DevSecOps.",
         resources: [
             {
                 label: "Semestres 1 et 2",
@@ -177,10 +177,10 @@ window.UE_CONTENT = {
         objectives: "Le professionnel doit savoir automatiser l'administration systeme et creer des outils sur mesure. Il maitrise les langages de script (Python, Bash), le developpement Web et les pratiques DevOps (Git, CI/CD).",
         reflectionTitle: "Reflexion sur les AC (DevSecOps)",
         reflectionParagraphs: [
-            "Lors de mon stage chez Dorner Health IT, j'ai developpe une solution critique (LAMP) et automatise son deploiement via Bash. Cela valide ma capacite a produire du code fiable et securise.",
-            "Sur la SAE 5.01, l'utilisation de Python pour traiter les donnees IoT et les injecter dans une BDD montre ma polyvalence entre le reseau et le code."
+            "La SAE 5.01 (CyberFi) m'a permis de concevoir des scripts Python pour collecter, traiter et acheminer les donnees IoT de maniere fiable.",
+            "Ce projet illustre ma capacite a creer des outils applicatifs relies au reseau (Python, MQTT, base de donnees), avec une logique d'automatisation et de securisation des traitements."
         ],
-        conclusion: "Je valide l'UE 3 par ma capacite a creer des outils logiciels adaptes aux besoins reseaux."
+        conclusion: "Je suis deja tres avance sur l'UE 3. Il me reste quelques cours pour perfectionner l'ensemble, puis un stage de 4 mois pour consolider cette progression."
     },
     ue4: {
         id: 4,
@@ -195,7 +195,7 @@ window.UE_CONTENT = {
         },
         pageTag: "Parcours Cyber",
         title: "Administrer un SI securise",
-        preamble: "Coeur de mon parcours Cyber, l'UE 4 atteste de ma capacite a securiser un systeme d'information. J'y aborde le durcissement (Hardening), la cryptographie et l'architecture securisee.",
+        preamble: "Coeur de mon parcours Cyber, l'UE 4 presente mon avancement sur la securisation d'un systeme d'information. J'y aborde le durcissement (Hardening), la cryptographie et l'architecture securisee.",
         resources: [
             {
                 label: "Semestres 1 a 4",
@@ -227,10 +227,10 @@ window.UE_CONTENT = {
         objectives: "L'etudiant doit savoir appliquer les recommandations de l'ANSSI pour durcir les systemes. Il concoit des architectures cloisonnees (VLAN, DMZ), deploie des pare-feux nouvelle generation et gere les certificats numeriques (PKI).",
         reflectionTitle: "Reflexion sur les AC (Hardening)",
         reflectionParagraphs: [
-            "J'ai valide l'AC34.02 via mon Homelab Proxmox. J'y ai deploye un pare-feu Pfsense pour filtrer les flux inter-VLAN et configure un Active Directory securise.",
-            "L'analyse de risques (EBIOS) realisee en R5.Cyber.12 m'a permis de comprendre la dimension organisationnelle de la securite, au-dela de la pure technique."
+            "J'ai deja bien avance sur la ressource R5.Cyber.09 via mon Homelab Proxmox. J'y ai deploye un pare-feu Pfsense pour filtrer les flux inter-VLAN et configure un Active Directory securise.",
+            "L'analyse de risques realisee en R5.Cyber.12 m'a permis de comprendre la dimension organisationnelle de la securite, au-dela de la pure technique."
         ],
-        conclusion: "Je valide l'UE 4 par ma maitrise de l'administration securisee des systemes."
+        conclusion: "Je suis deja tres avance sur l'UE 4. Il me reste quelques cours pour perfectionner l'ensemble, puis un stage de 4 mois pour consolider cette progression."
     },
     ue5: {
         id: 5,
@@ -245,7 +245,7 @@ window.UE_CONTENT = {
         },
         pageTag: "Parcours Cyber",
         title: "Surveiller un SI securise",
-        preamble: "Cette page justifie l'UE 5. Elle couvre mes competences en supervision de securite (SOC), en detection d'incidents et en tests d'intrusion (Pentesting).",
+        preamble: "Cette page presente mon avancement sur l'UE 5. Elle couvre mes competences en supervision de securite (SOC), en detection d'incidents et en tests d'intrusion (Pentesting).",
         resources: [
             {
                 label: "Semestres 1 a 4",
@@ -275,9 +275,9 @@ window.UE_CONTENT = {
         objectives: "Le professionnel doit surveiller l'etat de securite du SI en temps reel. Il deploie des sondes, analyse les logs via un SIEM et realise des audits (Pentesting) pour identifier les failles avant qu'elles ne soient exploitees par des attaquants.",
         reflectionTitle: "Reflexion sur les AC (Red/Blue Team)",
         reflectionParagraphs: [
-            "J'ai acquis l'AC35.01 lors de la SAE 5.Cyber.03 en configurant une stack ELK pour centraliser les logs. J'ai cree des regles de detection pour alerter sur des tentatives d'intrusion SSH.",
-            "Mon entrainement quotidien sur Root-Me (Projet Training) renforce ma posture Red Team, essentielle pour anticiper les attaques et mieux defendre (Blue Team)."
+            "J'ai deja bien avance sur la ressource R5.Cyber.11 lors de la SAE 5.Cyber.03 en configurant une stack ELK pour centraliser les logs. J'ai cree des regles de detection pour alerter sur des tentatives d'intrusion SSH.",
+            "Mon entrainement quotidien sur Root-Me (Projet Training) renforce les competences mobilisees sur la ressource de supervision et ameliore ma capacite a anticiper les attaques."
         ],
-        conclusion: "Je valide l'UE 5 par ma capacite a detecter et reagir aux incidents de securite."
+        conclusion: "Je suis deja tres avance sur l'UE 5. Il me reste quelques cours pour perfectionner l'ensemble, puis un stage de 4 mois pour consolider cette progression."
     }
 };
