@@ -1,0 +1,30 @@
+.fa,
+.fa-solid,
+.fa-regular,
+.fa-brands {
+    display: inline-block;
+    min-width: 1em;
+    text-align: center;
+    font-style: normal;
+    font-variant: normal;
+    line-height: 1;
+}
+
+.fa-solid::before,
+.fa-regular::before,
+.fa-brands::before,
+.fa::before {
+    content: "*";
+}
+
+.fa-arrow-right::before { content: "->"; }
+.fa-arrow-left::before { content: "<-"; }
+.fa-plus::before { content: "+"; }
+.fa-check::before { content: "v"; }
+.fa-envelope::before { content: "@"; }
+.fa-link::before { content: "#"; }
+.fa-github::before { content: "GH"; }
+.fa-linkedin::before { content: "in"; }
+.fa-folder-open::before { content: "[]"; }
+.fa-table-cells-large::before { content: "[]"; }
+.fa-arrow-up-right-from-square::before { content: "[]"; }

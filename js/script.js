@@ -147,22 +147,6 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    // --- Keyboard/Screen-reader friendly cards ---
-    document.querySelectorAll('[data-href][role="link"]').forEach(card => {
-        const goTo = () => {
-            const href = card.getAttribute('data-href');
-            if (href) window.location.href = href;
-        };
-
-        card.addEventListener('click', goTo);
-        card.addEventListener('keydown', (event) => {
-            if (event.key === 'Enter' || event.key === ' ') {
-                event.preventDefault();
-                goTo();
-            }
-        });
-    });
-
     // --- Typing Effect ---
     const txtElement = document.querySelector('.txt-type');
     if (txtElement) {

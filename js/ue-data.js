@@ -3,7 +3,7 @@ window.UE_CONTENT = {
         id: 1,
         code: "UE 1",
         gradeLabel: "UE5.1 [Administrer]",
-        average: "16.58",
+        average: "16.47",
         path: "ue1.html",
         theme: {
             accent: "#00F0FF",
@@ -64,7 +64,7 @@ window.UE_CONTENT = {
         id: 2,
         code: "UE 2",
         gradeLabel: "UE5.2 [Connecter]",
-        average: "15.48",
+        average: "15.57",
         path: "ue2.html",
         theme: {
             accent: "#22D3EE",
@@ -125,7 +125,7 @@ window.UE_CONTENT = {
         id: 3,
         code: "UE 3",
         gradeLabel: "UE5.3 [Programmer]",
-        average: "16.79",
+        average: "16.74",
         path: "ue3.html",
         theme: {
             accent: "#6366F1",
@@ -186,7 +186,7 @@ window.UE_CONTENT = {
         id: 4,
         code: "UE 4",
         gradeLabel: "UE5.Cyber.4 [Securiser]",
-        average: "15.25",
+        average: "15.12",
         path: "ue4.html",
         theme: {
             accent: "#F59E0B",
@@ -236,7 +236,7 @@ window.UE_CONTENT = {
         id: 5,
         code: "UE 5",
         gradeLabel: "UE5.Cyber.5 [Surveiller]",
-        average: "14.06",
+        average: "13.91",
         path: "ue5.html",
         theme: {
             accent: "#EF4444",
@@ -281,3 +281,4 @@ window.UE_CONTENT = {
         conclusion: "Je suis deja tres avance sur l'UE 5. Il me reste quelques cours pour perfectionner l'ensemble, puis un stage de 4 mois pour consolider cette progression."
     }
 };
+

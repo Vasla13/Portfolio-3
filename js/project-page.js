@@ -1,3 +1,22 @@
+function escapeHtml(value) {
+    return String(value ?? "")
+        .replace(/&/g, "&amp;")
+        .replace(/</g, "&lt;")
+        .replace(/>/g, "&gt;")
+        .replace(/"/g, "&quot;")
+        .replace(/'/g, "&#39;");
+}
+
+function sanitizeInternalHref(value) {
+    const href = String(value ?? "").trim();
+    return /^[a-zA-Z0-9._/-]+(?:#[a-zA-Z0-9_-]+)?$/.test(href) ? href : "index.html";
+}
+
+function sanitizeExternalHref(value) {
+    const href = String(value ?? "").trim();
+    return /^https?:\/\/[^\s"'<>()]+$/i.test(href) ? href : "#";
+}
+
 function buildProjectNav(current) {
     const projects = Object.values(window.PROJECT_CONTENT).sort((a, b) => a.id - b.id);
     const currentIndex = projects.findIndex(item => item.id === current.id);
@@ -5,11 +24,11 @@ function buildProjectNav(current) {
     const next = currentIndex < projects.length - 1 ? projects[currentIndex + 1] : null;
 
     const prevControl = prev
-        ? `<a href="${prev.path}" class="btn-neon"><i class="fa-solid fa-arrow-left"></i> ${prev.code}</a>`
+        ? `<a href="${sanitizeInternalHref(prev.path)}" class="btn-neon"><i class="fa-solid fa-arrow-left"></i> ${escapeHtml(prev.code)}</a>`
         : `<span class="prj-nav-disabled">Premier projet</span>`;
 
     const nextControl = next
-        ? `<a href="${next.path}" class="btn-neon">${next.code} <i class="fa-solid fa-arrow-right"></i></a>`
+        ? `<a href="${sanitizeInternalHref(next.path)}" class="btn-neon">${escapeHtml(next.code)} <i class="fa-solid fa-arrow-right"></i></a>`
         : `<span class="prj-nav-disabled">Dernier projet</span>`;
 
     return `
@@ -28,7 +47,7 @@ function buildCommandBlock(commands) {
         return "";
     }
 
-    const lines = commands.map(line => `<code>${line}</code>`).join("");
+    const lines = commands.map(line => `<code>${escapeHtml(line)}</code>`).join("");
     return `<div class="prj-command-block">${lines}</div>`;
 }
 
@@ -56,14 +75,22 @@ function renderProjectPage() {
 
     const hiddenSections = new Set(Array.isArray(data.hiddenSections) ? data.hiddenSections : []);
     const hiddenAnchorItems = new Set(Array.isArray(data.hiddenAnchorItems) ? data.hiddenAnchorItems : []);
+    const objectivePoints = Array.isArray(data.objectivePoints) ? data.objectivePoints : [];
+    const achievements = Array.isArray(data.achievements) ? data.achievements : [];
+    const technologies = Array.isArray(data.technologies) ? data.technologies : [];
+    const installationBlocks = Array.isArray(data.installationBlocks) ? data.installationBlocks : [];
+    const usagePoints = Array.isArray(data.usagePoints) ? data.usagePoints : [];
+    const validatedSkills = Array.isArray(data.validatedSkills) ? data.validatedSkills : [];
+    const links = Array.isArray(data.links) ? data.links : [];
+    const tracks = Array.isArray(data.tracks) ? data.tracks : [];
 
     const contextSection = !hiddenSections.has("context")
         ? `
             <section id="prj-context" class="glass prj-panel reveal">
                 <h2><i class="fa-solid fa-compass"></i> Contexte et objectifs</h2>
-                <p>${data.context}</p>
+                <p>${escapeHtml(data.context)}</p>
                 <ul class="prj-check-list">
-                    ${data.objectivePoints.map(point => `<li>${point}</li>`).join("")}
+                    ${objectivePoints.map(point => `<li>${escapeHtml(point)}</li>`).join("")}
                 </ul>
             </section>
         `
@@ -74,7 +101,7 @@ function renderProjectPage() {
             <section id="prj-work" class="glass prj-panel reveal delay-1">
                 <h2><i class="fa-solid fa-gear"></i> Realisations</h2>
                 <ul class="prj-check-list">
-                    ${data.achievements.map(item => `<li>${item}</li>`).join("")}
+                    ${achievements.map(item => `<li>${escapeHtml(item)}</li>`).join("")}
                 </ul>
             </section>
         `
@@ -85,24 +112,23 @@ function renderProjectPage() {
             <section id="prj-tech" class="glass prj-panel reveal delay-1">
                 <h2><i class="fa-solid fa-layer-group"></i> Technologies et concepts</h2>
                 <div class="prj-tag-grid">
-                    ${data.technologies.map(tech => `<span>${tech}</span>`).join("")}
+                    ${technologies.map(tech => `<span>${escapeHtml(tech)}</span>`).join("")}
                 </div>
-                <p class="prj-result">${data.resultNote}</p>
+                <p class="prj-result">${escapeHtml(data.resultNote)}</p>
             </section>
         `
         : "";
 
-    const installSection = Array.isArray(data.installationBlocks) && data.installationBlocks.length > 0
-        && !hiddenSections.has("install")
+    const installSection = installationBlocks.length > 0 && !hiddenSections.has("install")
         ? `
             <section id="prj-install" class="glass prj-panel reveal delay-2">
                 <h2><i class="fa-solid fa-screwdriver-wrench"></i> Installation et demarrage</h2>
                 <div class="prj-install-grid">
-                    ${data.installationBlocks.map(block => `
+                    ${installationBlocks.map(block => `
                         <article class="prj-install-card">
-                            <h3>${block.title}</h3>
+                            <h3>${escapeHtml(block.title)}</h3>
                             <ul>
-                                ${block.points.map(point => `<li>${point}</li>`).join("")}
+                                ${(Array.isArray(block.points) ? block.points : []).map(point => `<li>${escapeHtml(point)}</li>`).join("")}
                             </ul>
                             ${buildCommandBlock(block.commands)}
                         </article>
@@ -112,38 +138,35 @@ function renderProjectPage() {
         `
         : "";
 
-    const usageSection = Array.isArray(data.usagePoints) && data.usagePoints.length > 0
-        && !hiddenSections.has("usage")
+    const usageSection = usagePoints.length > 0 && !hiddenSections.has("usage")
         ? `
             <section id="prj-usage" class="glass prj-panel reveal delay-2">
                 <h2><i class="fa-solid fa-route"></i> Guide d'utilisation</h2>
                 <ul class="prj-check-list">
-                    ${data.usagePoints.map(point => `<li>${point}</li>`).join("")}
+                    ${usagePoints.map(point => `<li>${escapeHtml(point)}</li>`).join("")}
                 </ul>
             </section>
         `
         : "";
 
-    const skillsSection = Array.isArray(data.validatedSkills) && data.validatedSkills.length > 0
-        && !hiddenSections.has("skills")
+    const skillsSection = validatedSkills.length > 0 && !hiddenSections.has("skills")
         ? `
             <section id="prj-skills" class="glass prj-panel reveal delay-2">
                 <h2><i class="fa-solid fa-certificate"></i> Competences validees</h2>
                 <ul class="prj-check-list">
-                    ${data.validatedSkills.map(skill => `<li>${skill}</li>`).join("")}
+                    ${validatedSkills.map(skill => `<li>${escapeHtml(skill)}</li>`).join("")}
                 </ul>
             </section>
         `
         : "";
 
-    const linksSection = Array.isArray(data.links) && data.links.length > 0
-        && !hiddenSections.has("links")
+    const linksSection = links.length > 0 && !hiddenSections.has("links")
         ? `
             <section class="glass prj-links reveal delay-3">
                 <h2><i class="fa-solid fa-link"></i> Liens utiles</h2>
                 <div class="prj-links-grid">
-                    ${data.links.map(link => `
-                        <a class="prj-link-item" href="${link.href}" target="_blank" rel="noopener noreferrer">${link.label}</a>
+                    ${links.map(link => `
+                        <a class="prj-link-item" href="${sanitizeExternalHref(link.href)}" target="_blank" rel="noopener noreferrer">${escapeHtml(link.label)}</a>
                     `).join("")}
                 </div>
             </section>
@@ -169,25 +192,25 @@ function renderProjectPage() {
     root.innerHTML = `
         <section class="glass prj-hero reveal">
             <div class="prj-hero-main">
-                <p class="prj-overline">${data.code}</p>
-                <h1 class="prj-title">${data.title}</h1>
-                <p class="prj-subtitle">${data.subtitle}</p>
+                <p class="prj-overline">${escapeHtml(data.code)}</p>
+                <h1 class="prj-title">${escapeHtml(data.title)}</h1>
+                <p class="prj-subtitle">${escapeHtml(data.subtitle)}</p>
                 <div class="prj-track-row">
-                    ${data.tracks.map(track => `<span>${track}</span>`).join("")}
+                    ${tracks.map(track => `<span>${escapeHtml(track)}</span>`).join("")}
                 </div>
             </div>
             <aside class="prj-hero-side">
                 <div class="prj-meta-item">
                     <span>Semestre</span>
-                    <p>${data.semester}</p>
+                    <p>${escapeHtml(data.semester)}</p>
                 </div>
                 <div class="prj-meta-item">
                     <span>Encadrant</span>
-                    <p>${data.mentor}</p>
+                    <p>${escapeHtml(data.mentor)}</p>
                 </div>
                 <div class="prj-meta-item">
                     <span>Niveau</span>
-                    <p>${data.code}</p>
+                    <p>${escapeHtml(data.code)}</p>
                 </div>
             </aside>
         </section>
@@ -196,7 +219,6 @@ function renderProjectPage() {
         ${contextSection}
         ${workSection}
         ${techSection}
-
         ${installSection}
         ${usageSection}
         ${skillsSection}

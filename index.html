@@ -9,13 +9,12 @@
     <meta property="og:title" content="Eric Petersen | Portfolio Cyber">
     <meta property="og:description" content="Portfolio d'Eric Petersen : cybersécurité, réseaux, cloud et DevSecOps.">
     <meta property="og:image" content="assets/profil.jpg">
-
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/fa-fallback.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" onerror="this.onerror=null;this.href='css/fa-fallback.css';">
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <a href="#home" class="skip-link">Aller au contenu</a>
+    <a href="#main-content" class="skip-link">Aller au contenu</a>
 
     <div class="bg-wrapper">
         <div class="blob blob-1"></div>
@@ -31,7 +30,7 @@
             <li><a href="#skills" class="nav-item">Compétences</a></li>
             <li><a href="#experience" class="nav-item">Parcours</a></li>
             <li><a href="#projects" class="nav-item">Projets</a></li>
-            <li><a href="https://vasla13.github.io/portfolio-2/" target="_blank" rel="noopener noreferrer" class="nav-item portfolio-link"><i class="fa-solid fa-folder-open"></i> Portfolio BUT2</a></li>
+            <li class="nav-divider-start"><a href="https://vasla13.github.io/portfolio-2/" target="_blank" rel="noopener noreferrer" class="nav-item portfolio-link"><i class="fa-solid fa-folder-open"></i> Portfolio BUT2</a></li>
             <li><a href="https://e-portfolio.uha.fr/view/view.php?t=30cd063b10ee63ee04aa" target="_blank" rel="noopener noreferrer" class="nav-item portfolio-link"><i class="fa-solid fa-folder-open"></i> Portfolio BUT1</a></li>
             <li><a href="#contact" class="btn-neon">Contact</a></li>
         </ul>
@@ -39,6 +38,7 @@
         <div class="burger" role="button" tabindex="0" aria-label="Ouvrir ou fermer le menu" aria-expanded="false"><span></span><span></span><span></span></div>
     </nav>
 
+    <main id="main-content">
     <header id="home" class="hero">
         <div class="container hero-content">
             <div class="profile-frame fade-up">
@@ -46,7 +46,7 @@
             </div>
 
             <div class="hero-badge fade-up delay-1">
-                <span class="status-dot"></span> Open to work : Septembre 2026
+                <span class="status-dot"></span> En recherche d'un master
             </div>
             
             <h1 class="fade-up delay-2">Eric <span class="gradient-text">Petersen</span></h1>
@@ -75,7 +75,7 @@
             </div>
 
             <div class="skills-wrapper">
-                <div class="skill-card glass reveal" role="link" tabindex="0" data-href="ue1.html" data-ue-label="UE 1 - Administrer les réseaux" aria-label="Voir le détail de l'UE 1">
+                <a class="skill-card glass reveal" href="ue1.html" data-ue-label="UE 1 - Administrer les réseaux" aria-label="Voir le détail de l'UE 1">
                     <div class="card-bg-num">01</div>
                     <div class="skill-top">
                         <div class="icon-box"><i class="fa-solid fa-network-wired"></i></div>
@@ -83,11 +83,11 @@
                     </div>
                     <h3>Administrer les réseaux</h3>
                     <p class="skill-summary">Architecture, Routage, Systèmes Linux/Windows.</p>
-                    <p class="skill-average mono">Moyenne : 16.58</p>
+                    <p class="skill-average mono">Moyenne : 16.47</p>
                     <div class="click-hint"><i class="fa-solid fa-plus"></i> Voir détail</div>
-                </div>
+                </a>
 
-                <div class="skill-card glass reveal delay-1" role="link" tabindex="0" data-href="ue2.html" data-ue-label="UE 2 - Connecter l'entreprise" aria-label="Voir le détail de l'UE 2">
+                <a class="skill-card glass reveal delay-1" href="ue2.html" data-ue-label="UE 2 - Connecter l'entreprise" aria-label="Voir le détail de l'UE 2">
                     <div class="card-bg-num">02</div>
                     <div class="skill-top">
                         <div class="icon-box"><i class="fa-solid fa-tower-cell"></i></div>
@@ -95,11 +95,11 @@
                     </div>
                     <h3>Connecter l'entreprise</h3>
                     <p class="skill-summary">Technologies d'accès, Fibre, WiFi, ToIP/VoIP.</p>
-                    <p class="skill-average mono">Moyenne : 15.48</p>
+                    <p class="skill-average mono">Moyenne : 15.57</p>
                     <div class="click-hint"><i class="fa-solid fa-plus"></i> Voir détail</div>
-                </div>
+                </a>
 
-                <div class="skill-card glass reveal delay-2" role="link" tabindex="0" data-href="ue3.html" data-ue-label="UE 3 - Programmer et Automatiser" aria-label="Voir le détail de l'UE 3">
+                <a class="skill-card glass reveal delay-2" href="ue3.html" data-ue-label="UE 3 - Programmer et Automatiser" aria-label="Voir le détail de l'UE 3">
                     <div class="card-bg-num">03</div>
                     <div class="skill-top">
                         <div class="icon-box"><i class="fa-solid fa-code"></i></div>
@@ -107,11 +107,11 @@
                     </div>
                     <h3>Programmer & Automatiser</h3>
                     <p class="skill-summary">Scripting, DevOps, Développement d'outils.</p>
-                    <p class="skill-average mono">Moyenne : 16.79</p>
+                    <p class="skill-average mono">Moyenne : 16.74</p>
                     <div class="click-hint"><i class="fa-solid fa-plus"></i> Voir détail</div>
-                </div>
+                </a>
 
-                <div class="skill-card glass reveal delay-3" role="link" tabindex="0" data-href="ue4.html" data-ue-label="UE 4 - Administrer un SI Sécurisé" aria-label="Voir le détail de l'UE 4">
+                <a class="skill-card glass reveal delay-3" href="ue4.html" data-ue-label="UE 4 - Administrer un SI Sécurisé" aria-label="Voir le détail de l'UE 4">
                     <div class="card-bg-num">04</div>
                     <div class="skill-top">
                         <div class="icon-box"><i class="fa-solid fa-shield-halved"></i></div>
@@ -119,11 +119,11 @@
                     </div>
                     <h3>Administrer un SI Sécurisé</h3>
                     <p class="skill-summary">Hardening, Cryptographie, Pentesting.</p>
-                    <p class="skill-average mono">Moyenne : 15.25</p>
+                    <p class="skill-average mono">Moyenne : 15.12</p>
                     <div class="click-hint"><i class="fa-solid fa-plus"></i> Voir détail</div>
-                </div>
+                </a>
 
-                <div class="skill-card glass reveal delay-4" role="link" tabindex="0" data-href="ue5.html" data-ue-label="UE 5 - Surveiller un SI Sécurisé" aria-label="Voir le détail de l'UE 5">
+                <a class="skill-card glass reveal delay-4" href="ue5.html" data-ue-label="UE 5 - Surveiller un SI Sécurisé" aria-label="Voir le détail de l'UE 5">
                     <div class="card-bg-num">05</div>
                     <div class="skill-top">
                         <div class="icon-box active-learn"><i class="fa-solid fa-eye"></i></div>
@@ -131,9 +131,9 @@
                     </div>
                     <h3>Surveiller un SI Sécurisé</h3>
                     <p class="skill-summary">SOC, SIEM, Gestion d'incidents & Forensics.</p>
-                    <p class="skill-average mono">Moyenne : 14.06</p>
+                    <p class="skill-average mono">Moyenne : 13.91</p>
                     <div class="click-hint"><i class="fa-solid fa-plus"></i> Voir détail</div>
-                </div>
+                </a>
             </div>
         </div>
     </section>
@@ -200,7 +200,7 @@
             </div>
 
             <div class="projects-grid">
-                <article class="project-card glass reveal" role="link" tabindex="0" data-href="project-sae501.html" aria-label="Ouvrir la page projet SAE 5.01 Tracage GNSS LoRaWAN">
+                <a class="project-card glass reveal" href="project-sae501.html" aria-label="Ouvrir la page projet SAE 5.01 Tracage GNSS LoRaWAN">
                     <div class="card-image iot-bg">
                         <span class="badge-type">SAE 5.01</span>
                     </div>
@@ -209,9 +209,9 @@
                         <p>Conception d'un système autonome de suivi véhicule via TTN avec optimisation énergétique.</p>
                         <div class="tech-stack"><span>LoRaWAN</span><span>MicroPython</span><span>Node-RED</span></div>
                     </div>
-                </article>
+                </a>
 
-                <article class="project-card glass reveal delay-1" role="link" tabindex="0" data-href="project-instravel.html" aria-label="Ouvrir la page projet Instravel">
+                <a class="project-card glass reveal delay-1" href="project-instravel.html" aria-label="Ouvrir la page projet Instravel">
                     <div class="card-image instravel-bg">
                         <span class="badge-type">Projet Web</span>
                     </div>
@@ -220,9 +220,9 @@
                         <p>Application de gestion de voyages avec profils, étapes, confidentialité et notifications.</p>
                         <div class="tech-stack"><span>Python</span><span>Docker</span><span>SQL</span></div>
                     </div>
-                </article>
+                </a>
 
-                <article class="project-card glass reveal delay-2" role="link" tabindex="0" data-href="project-ae5-cyber03.html" aria-label="Ouvrir la page projet SAE 5.Cyber.03 Stormshield CSNA">
+                <a class="project-card glass reveal delay-2" href="project-ae5-cyber03.html" aria-label="Ouvrir la page projet SAE 5.Cyber.03 Stormshield CSNA">
                     <div class="card-image stormshield-bg">
                         <span class="badge-type">SAE 5.Cyber.03</span>
                     </div>
@@ -231,9 +231,9 @@
                         <p>Sécurisation et supervision avancées d'un SI avec certification CSNA validée (86%).</p>
                         <div class="tech-stack"><span>Stormshield SNS</span><span>IPSec</span><span>PKI</span></div>
                     </div>
-                </article>
+                </a>
 
-                <article class="project-card glass reveal delay-3" role="link" tabindex="0" data-href="project-amicale-snack-fidelite.html" aria-label="Ouvrir la page projet personnel AMICALE R&T Snack et Fidelite">
+                <a class="project-card glass reveal delay-3" href="project-amicale-snack-fidelite.html" aria-label="Ouvrir la page projet personnel AMICALE R&T Snack et Fidelite">
                     <div class="card-image amicale-bg">
                         <span class="badge-type">Projet Perso</span>
                     </div>
@@ -242,10 +242,11 @@
                         <p>App React/Vite en PWA: auth Firebase, panier, Pass QR, points fidelite et back-office admin.</p>
                         <div class="tech-stack"><span>React</span><span>Firebase</span><span>PWA</span></div>
                     </div>
-                </article>
+                </a>
             </div>
         </div>
     </section>
+    </main>
 
     <footer id="contact" class="minimal-footer">
         <div class="container">
@@ -272,3 +273,4 @@
     <script src="js/script.js"></script>
 </body>
 </html>
+

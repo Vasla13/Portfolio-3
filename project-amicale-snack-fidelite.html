@@ -5,8 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Projet Perso | AMICALE R&T - Snack & Fidelite</title>
     <meta name="description" content="Projet personnel React/Vite/Firebase: app snack & fidelite avec QR pass, back-office admin et PWA mobile.">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/fa-fallback.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" onerror="this.onerror=null;this.href='css/fa-fallback.css';">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/project-page.css">
 </head>
@@ -26,7 +26,26 @@
 
     <main id="project-main" class="section prj-shell">
         <div class="container">
-            <div id="project-root"></div>
+            <div id="project-root">
+                <section class="glass prj-hero">
+                    <div class="prj-hero-main">
+                        <p class="prj-overline">Projet Perso</p>
+                        <h1 class="prj-title">AMICALE R&T - Snack & Fidelite</h1>
+                        <p class="prj-subtitle">Version statique de secours affichee si JavaScript est desactive.</p>
+                    </div>
+                    <aside class="prj-hero-side">
+                        <div class="prj-meta-item">
+                            <span>Type</span>
+                            <p>Projet personnel - BUT3</p>
+                        </div>
+                    </aside>
+                </section>
+                <section class="glass prj-panel">
+                    <h2><i class="fa-solid fa-circle-info"></i> Contenu de secours</h2>
+                    <p>Active JavaScript pour afficher le detail complet du projet (installation, usage et competences).</p>
+                    <a class="btn-neon" href="index.html#projects"><i class="fa-solid fa-table-cells-large"></i> Retour aux projets</a>
+                </section>
+            </div>
         </div>
     </main>
 
@@ -35,3 +54,5 @@
     <script src="js/script.js" defer></script>
 </body>
 </html>
+
+

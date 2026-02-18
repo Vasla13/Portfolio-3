@@ -1,20 +1,36 @@
+function escapeHtml(value) {
+    return String(value ?? "")
+        .replace(/&/g, "&amp;")
+        .replace(/</g, "&lt;")
+        .replace(/>/g, "&gt;")
+        .replace(/"/g, "&quot;")
+        .replace(/'/g, "&#39;");
+}
+
+function sanitizeInternalHref(value) {
+    const href = String(value ?? "").trim();
+    return /^[a-zA-Z0-9._/-]+(?:#[a-zA-Z0-9_-]+)?$/.test(href) ? href : "index.html";
+}
+
 function buildResourceCards(resources, badgeText) {
     return resources.map(group => {
         const items = group.items.map(item =>
-            `<li><span>${item.code}</span>${item.text}</li>`
+            `<li><span>${escapeHtml(item.code)}</span>${escapeHtml(item.text)}</li>`
         ).join("");
 
         const badge = group.active
-            ? `<div class="uex-badge"><i class="fa-solid fa-check"></i> ${badgeText}</div>`
+            ? `<div class="uex-badge"><i class="fa-solid fa-check"></i> ${escapeHtml(badgeText)}</div>`
             : "";
 
         const classes = group.active ? "glass uex-card uex-card-active reveal delay-2" : "glass uex-card reveal delay-1";
+        const groupLabel = escapeHtml(group.label);
+        const resourcesCount = Number(group.items.length) || 0;
 
         return `
             <article class="${classes}">
                 <header class="uex-card-header">
-                    <h3>${group.label}</h3>
-                    <span class="uex-pill">${group.items.length} ressources</span>
+                    <h3>${groupLabel}</h3>
+                    <span class="uex-pill">${resourcesCount} ressources</span>
                 </header>
                 <ul class="uex-resource-list">${items}</ul>
                 ${badge}
@@ -26,7 +42,7 @@ function buildResourceCards(resources, badgeText) {
 function buildSaeList(items) {
     return items.map(item => {
         const itemClass = item.highlight ? "uex-check-item is-highlight" : "uex-check-item";
-        return `<li class="${itemClass}">${item.text}</li>`;
+        return `<li class="${itemClass}">${escapeHtml(item.text)}</li>`;
     }).join("");
 }
 
@@ -37,11 +53,11 @@ function buildNavigation(current) {
     const next = currentIndex < all.length - 1 ? all[currentIndex + 1] : null;
 
     const prevLink = prev
-        ? `<a href="${prev.path}" class="btn-neon"><i class="fa-solid fa-arrow-left"></i> ${prev.code}</a>`
+        ? `<a href="${sanitizeInternalHref(prev.path)}" class="btn-neon"><i class="fa-solid fa-arrow-left"></i> ${escapeHtml(prev.code)}</a>`
         : `<span class="uex-nav-disabled">Debut du parcours</span>`;
 
     const nextLink = next
-        ? `<a href="${next.path}" class="btn-neon">${next.code} <i class="fa-solid fa-arrow-right"></i></a>`
+        ? `<a href="${sanitizeInternalHref(next.path)}" class="btn-neon">${escapeHtml(next.code)} <i class="fa-solid fa-arrow-right"></i></a>`
         : `<span class="uex-nav-disabled">Derniere competence</span>`;
 
     return `
@@ -77,13 +93,17 @@ function renderUEPage() {
         return;
     }
 
-    const resourcesCount = data.resources.reduce((sum, group) => sum + group.items.length, 0);
+    const resources = Array.isArray(data.resources) ? data.resources : [];
+    const saeItems = Array.isArray(data.saeItems) ? data.saeItems : [];
+    const reflectionParagraphs = Array.isArray(data.reflectionParagraphs) ? data.reflectionParagraphs : [];
+    const resourcesCount = resources.reduce((sum, group) => sum + (Array.isArray(group.items) ? group.items.length : 0), 0);
+
     const averageKpi = data.average
         ? `
             <article class="uex-kpi">
                 <p class="uex-kpi-label">Moyenne</p>
-                <p class="uex-kpi-value">${data.average}</p>
-                <p class="uex-kpi-meta">${data.gradeLabel || ""}</p>
+                <p class="uex-kpi-value">${escapeHtml(data.average)}</p>
+                <p class="uex-kpi-meta">${escapeHtml(data.gradeLabel || "")}</p>
             </article>
         `
         : "";
@@ -91,9 +111,9 @@ function renderUEPage() {
     root.innerHTML = `
         <section class="glass uex-hero reveal">
             <div>
-                <p class="uex-overline">${data.pageTag}</p>
-                <h1 class="uex-title">${data.title}</h1>
-                <p class="uex-preamble">${data.preamble}</p>
+                <p class="uex-overline">${escapeHtml(data.pageTag)}</p>
+                <h1 class="uex-title">${escapeHtml(data.title)}</h1>
+                <p class="uex-preamble">${escapeHtml(data.preamble)}</p>
             </div>
             <div class="uex-kpi-grid">
                 <article class="uex-kpi">
@@ -102,11 +122,11 @@ function renderUEPage() {
                 </article>
                 <article class="uex-kpi">
                     <p class="uex-kpi-label">SAE</p>
-                    <p class="uex-kpi-value">${data.saeItems.length}</p>
+                    <p class="uex-kpi-value">${saeItems.length}</p>
                 </article>
                 <article class="uex-kpi">
                     <p class="uex-kpi-label">Niveau</p>
-                    <p class="uex-kpi-value">${data.code}</p>
+                    <p class="uex-kpi-value">${escapeHtml(data.code)}</p>
                 </article>
                 ${averageKpi}
             </div>
@@ -119,30 +139,30 @@ function renderUEPage() {
                 <div class="title-underline"></div>
             </header>
             <div class="uex-grid">
-                ${buildResourceCards(data.resources, data.resourceBadge)}
+                ${buildResourceCards(resources, data.resourceBadge)}
             </div>
         </section>
 
         <section id="ue-practice" class="uex-section uex-split">
             <article class="glass uex-panel reveal">
-                <h2><i class="fa-solid fa-briefcase"></i> ${data.saeTitle}</h2>
+                <h2><i class="fa-solid fa-briefcase"></i> ${escapeHtml(data.saeTitle)}</h2>
                 <ul class="uex-check-list">
-                    ${buildSaeList(data.saeItems)}
+                    ${buildSaeList(saeItems)}
                 </ul>
             </article>
             <article class="glass uex-panel reveal delay-1">
-                <h2><i class="fa-solid fa-bullseye"></i> ${data.objectivesTitle}</h2>
-                <p>${data.objectives}</p>
+                <h2><i class="fa-solid fa-bullseye"></i> ${escapeHtml(data.objectivesTitle)}</h2>
+                <p>${escapeHtml(data.objectives)}</p>
             </article>
         </section>
 
         <section id="ue-reflection" class="glass uex-reflection reveal delay-2">
-            <h2><i class="fa-solid fa-brain"></i> ${data.reflectionTitle}</h2>
-            ${data.reflectionParagraphs.map(text => `<p>${text}</p>`).join("")}
+            <h2><i class="fa-solid fa-brain"></i> ${escapeHtml(data.reflectionTitle)}</h2>
+            ${reflectionParagraphs.map(text => `<p>${escapeHtml(text)}</p>`).join("")}
         </section>
 
         <section class="glass uex-conclusion reveal delay-2">
-            <p>${data.conclusion}</p>
+            <p>${escapeHtml(data.conclusion)}</p>
         </section>
 
         ${buildNavigation(data)}
