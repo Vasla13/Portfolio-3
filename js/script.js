@@ -119,6 +119,12 @@ document.addEventListener('DOMContentLoaded', () => {
         .filter(item => item.section);
 
     if (sectionTargets.length > 0) {
+        const setBodyTone = (sectionId) => {
+            if (sectionId) {
+                document.body.setAttribute('data-tone', sectionId);
+            }
+        };
+
         const setActiveLink = (activeLink) => {
             navItems.forEach(link => {
                 const isActive = link === activeLink;
@@ -131,20 +137,54 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         };
 
+        const setActiveSection = (target) => {
+            setActiveLink(target.link);
+            if (target.section && target.section.id) {
+                setBodyTone(target.section.id);
+            }
+        };
+
         if ('IntersectionObserver' in window) {
             const sectionObserver = new IntersectionObserver((entries) => {
                 entries.forEach(entry => {
                     if (entry.isIntersecting) {
                         const match = sectionTargets.find(item => item.section === entry.target);
-                        if (match) setActiveLink(match.link);
+                        if (match) {
+                            setActiveSection(match);
+                        }
                     }
                 });
-            }, { rootMargin: '-45% 0px -45% 0px', threshold: 0.01 });
+            }, { rootMargin: '-42% 0px -42% 0px', threshold: 0.01 });
 
             sectionTargets.forEach(item => sectionObserver.observe(item.section));
         } else {
-            setActiveLink(sectionTargets[0].link);
+            setActiveSection(sectionTargets[0]);
         }
+
+        setBodyTone(sectionTargets[0].section.id);
+    }
+
+    // --- Scroll progression indicator ---
+    const scrollMeterFill = document.querySelector('.scroll-meter-fill');
+    if (scrollMeterFill) {
+        let meterTicking = false;
+        const updateScrollMeter = () => {
+            const maxScroll = document.documentElement.scrollHeight - window.innerHeight;
+            const ratio = maxScroll > 0 ? Math.min(window.scrollY / maxScroll, 1) : 0;
+            scrollMeterFill.style.transform = `scaleY(${ratio})`;
+            meterTicking = false;
+        };
+
+        updateScrollMeter();
+
+        window.addEventListener('scroll', () => {
+            if (!meterTicking) {
+                window.requestAnimationFrame(updateScrollMeter);
+                meterTicking = true;
+            }
+        }, { passive: true });
+
+        window.addEventListener('resize', updateScrollMeter);
     }
 
     // --- Typing Effect ---
@@ -205,10 +245,11 @@ document.addEventListener('DOMContentLoaded', () => {
     const revealElements = document.querySelectorAll('.reveal');
 
     if ('IntersectionObserver' in window) {
-        const observer = new IntersectionObserver((entries) => {
+        const observer = new IntersectionObserver((entries, obs) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
                     entry.target.classList.add('active');
+                    obs.unobserve(entry.target);
                 }
             });
         }, { threshold: 0.1 });
