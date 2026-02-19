@@ -9,11 +9,16 @@
     <meta property="og:title" content="Eric Petersen | Portfolio Cyber">
     <meta property="og:description" content="Portfolio d'Eric Petersen : cybersécurité, réseaux, cloud et DevSecOps.">
     <meta property="og:image" content="assets/profil.jpg">
-    <link rel="stylesheet" href="css/fa-fallback.css?v=20260219-1">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" onerror="this.onerror=null;this.href='css/fa-fallback.css?v=20260219-1';">
-    <link rel="stylesheet" href="css/style.css?v=20260219-1">
+    <link rel="stylesheet" href="css/fa-fallback.css?v=20260219-2">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" onerror="this.onerror=null;this.href='css/fa-fallback.css?v=20260219-2';">
+    <link rel="stylesheet" href="css/style.css?v=20260219-2">
+    <noscript><style>.preloader{display:none!important;}body.is-preloading{overflow:auto!important;}</style></noscript>
 </head>
-<body>
+<body class="is-preloading">
+    <div class="preloader" aria-hidden="true">
+        <p class="preloader-logo mono">ERIC<span class="dot">.</span>P</p>
+        <div class="preloader-bar"><span class="preloader-bar-fill"></span></div>
+    </div>
     <a href="#main-content" class="skip-link">Aller au contenu</a>
 
     <div class="bg-wrapper">
@@ -37,7 +42,7 @@
             <li><a href="#projects" class="nav-item">Projets</a></li>
             <li class="nav-divider-start"><a href="https://vasla13.github.io/portfolio-2/" target="_blank" rel="noopener noreferrer" class="nav-item portfolio-link"><i class="fa-solid fa-folder-open"></i> Portfolio BUT2</a></li>
             <li><a href="https://e-portfolio.uha.fr/view/view.php?t=30cd063b10ee63ee04aa" target="_blank" rel="noopener noreferrer" class="nav-item portfolio-link"><i class="fa-solid fa-folder-open"></i> Portfolio BUT1</a></li>
-            <li><a href="#contact" class="btn-neon">Contact</a></li>
+            <li><a href="#contact" class="btn-neon magnetic" data-magnetic-max="8">Contact</a></li>
         </ul>
 
         <div class="burger" role="button" tabindex="0" aria-label="Ouvrir ou fermer le menu" aria-expanded="false"><span></span><span></span><span></span></div>
@@ -77,21 +82,21 @@
             </div>
             
             <div class="hero-buttons fade-up delay-5">
-                <a href="#projects" class="btn btn-primary">Voir mes projets <i class="fa-solid fa-arrow-right"></i></a>
-                <a href="assets/cv_francais.pdf" download class="btn btn-outline"><img src="https://flagcdn.com/w20/fr.png" alt="FR" class="btn-flag"> CV FR</a>
-                <a href="assets/cv-anglais.pdf" download class="btn btn-outline"><img src="https://flagcdn.com/w20/gb.png" alt="EN" class="btn-flag"> CV EN</a>
+                <a href="#projects" class="btn btn-primary magnetic" data-magnetic-max="13">Voir mes projets <i class="fa-solid fa-arrow-right"></i></a>
+                <a href="assets/cv_francais.pdf" download class="btn btn-outline magnetic" data-magnetic-max="10"><img src="https://flagcdn.com/w20/fr.png" alt="FR" class="btn-flag"> CV FR</a>
+                <a href="assets/cv-anglais.pdf" download class="btn btn-outline magnetic" data-magnetic-max="10"><img src="https://flagcdn.com/w20/gb.png" alt="EN" class="btn-flag"> CV EN</a>
             </div>
         </div>
     </header>
 
-    <section id="skills" class="section">
+    <section id="skills" class="section cinematic-section">
         <div class="container">
             <div class="section-header">
                 <span class="section-tag">Référentiel BUT R&T Cyber</span>
                 <h2 class="section-title">Mes 5 Compétences Clés</h2>
                 <div class="title-underline"></div>
                 <p class="section-subtext">Approche technique globale, de l'infrastructure à la sécurité.</p>
-                <a href="competences.html" class="btn-neon skills-detail-link"><i class="fa-solid fa-file-lines"></i> Voir le detail complet</a>
+                <a href="competences.html" class="btn-neon skills-detail-link magnetic" data-magnetic-max="10"><i class="fa-solid fa-file-lines"></i> Voir le detail complet</a>
             </div>
 
             <div class="skills-wrapper">
@@ -158,7 +163,7 @@
         </div>
     </section>
 
-    <section id="experience" class="section alt-bg">
+    <section id="experience" class="section alt-bg cinematic-section">
         <div class="container">
             <div class="section-header">
                 <span class="section-tag">Expérience Professionnelle</span>
@@ -190,6 +195,7 @@
                 <div class="timeline-row right reveal delay-1">
                     <div class="timeline-dot">
                         <div class="dot-core"></div>
+                        <div class="dot-pulse"></div>
                     </div>
                     <div class="timeline-content glass-card">
                         <span class="date-badge mono">2025 • Stage (8 sem)</span>
@@ -204,14 +210,14 @@
                             <br>• Sécurité : Gestion des droits, logs, chiffrement.
                         </p>
                         <div class="tech-tags mono"><span>SecOps</span><span>Bash</span><span>Fullstack</span></div>
-                        <a href="experience-dorner.html" class="btn-neon timeline-action"><i class="fa-solid fa-arrow-up-right-from-square"></i> Detail experience</a>
+                        <a href="experience-dorner.html" class="btn-neon timeline-action magnetic" data-magnetic-max="10"><i class="fa-solid fa-arrow-up-right-from-square"></i> Detail experience</a>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="proofs" class="section proofs-section">
+    <section id="proofs" class="section proofs-section cinematic-section">
         <div class="container">
             <div class="section-header">
                 <span class="section-tag">Preuves & Impact</span>
@@ -222,28 +228,28 @@
 
             <div class="proofs-grid">
                 <article class="proof-card glass reveal">
-                    <p class="proof-metric mono">86%</p>
+                    <p class="proof-metric mono" data-countup="86" data-suffix="%">86%</p>
                     <h3>CSNA Stormshield</h3>
                     <p>Certification validee sur labs completes de securisation, VPN, PKI et supervision.</p>
                     <a href="project-ae5-cyber03.html" class="proof-link">Voir la SAE associee <i class="fa-solid fa-arrow-right"></i></a>
                 </article>
 
                 <article class="proof-card glass reveal delay-1">
-                    <p class="proof-metric mono">16.74</p>
+                    <p class="proof-metric mono" data-countup="16.74" data-decimals="2">16.74</p>
                     <h3>UE 5.3 Programmer</h3>
                     <p>Meilleure moyenne du semestre sur la competence de creation d'outils et automatisation.</p>
                     <a href="ue3.html" class="proof-link">Explorer l'UE 3 <i class="fa-solid fa-arrow-right"></i></a>
                 </article>
 
                 <article class="proof-card glass reveal delay-2">
-                    <p class="proof-metric mono">4+</p>
+                    <p class="proof-metric mono" data-countup="4" data-suffix="+">4+</p>
                     <h3>Projets deployes</h3>
                     <p>Portfolio technique couvrant IoT, securite offensive/defensive et application produit.</p>
                     <a href="#projects" class="proof-link">Parcourir les projets <i class="fa-solid fa-arrow-right"></i></a>
                 </article>
 
                 <article class="proof-card glass reveal delay-3">
-                    <p class="proof-metric mono">2025</p>
+                    <p class="proof-metric mono" data-countup="2025">2025</p>
                     <h3>Stage international</h3>
                     <p>Developpement web securise sur un outil de gestion de mises a jour chez DORNER Health IT.</p>
                     <a href="experience-dorner.html" class="proof-link">Lire le retour d'experience <i class="fa-solid fa-arrow-right"></i></a>
@@ -252,7 +258,7 @@
         </div>
     </section>
 
-    <section id="projects" class="section">
+    <section id="projects" class="section cinematic-section">
         <div class="container">
             <div class="section-header">
                 <span class="section-tag">Portfolio Technique</span>
@@ -331,7 +337,8 @@
         </div>
     </footer>
 
-    <script src="js/script.js?v=20260219-1"></script>
+    <script src="js/script.js?v=20260219-2"></script>
 </body>
 </html>
+
 
